@@ -1,9 +1,40 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
+    <EnablePackageValidation>true</EnablePackageValidation>
     <TargetFramework>net8.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
+    <Title>Tailwind Merge</Title>
+    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+    <Authors>Aaron Layton</Authors>
+    <Description>A TagHelper for merging TailwindCSS classes, similar to Tailwind Merge</Description>
+    <Copyright>MIT</Copyright>
+    <PackageProjectUrl>https://github.com/AaronLayton/tailwind-merge-nuget</PackageProjectUrl>
+    <PackageIcon>logo.png</PackageIcon>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <RepositoryUrl>https://github.com/AaronLayton/tailwind-merge-nuget</RepositoryUrl>
+    <PackageTags>tailwind, tailwindcss, merge</PackageTags>
+
+    <NoWarn>$(NoWarn);CS1591</NoWarn>
   </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="..\assets\logo.png">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+    <None Include="..\README.md">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="DotNet.ReproducibleBuilds" Version="1.1.1">
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
+  </ItemGroup>
 
 </Project>
