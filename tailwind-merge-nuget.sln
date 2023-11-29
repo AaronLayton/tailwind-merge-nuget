@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TailwindMerge", "TailwindMerge\TailwindMerge.csproj", "{8BE8CA6B-F6EE-4D45-A05F-99220E73F3AF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TailwindMerge.Tests", "TailwindMerge.Tests\TailwindMerge.Tests.csproj", "{3771806E-8602-41DB-8469-70EF0B69E304}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8BE8CA6B-F6EE-4D45-A05F-99220E73F3AF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8BE8CA6B-F6EE-4D45-A05F-99220E73F3AF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8BE8CA6B-F6EE-4D45-A05F-99220E73F3AF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8BE8CA6B-F6EE-4D45-A05F-99220E73F3AF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3771806E-8602-41DB-8469-70EF0B69E304}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3771806E-8602-41DB-8469-70EF0B69E304}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3771806E-8602-41DB-8469-70EF0B69E304}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3771806E-8602-41DB-8469-70EF0B69E304}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,12 @@
+F:\Projects\Git\tailwind-merge-nuget\TailwindMerge\bin\Debug\net8.0\TailwindMerge.deps.json
+F:\Projects\Git\tailwind-merge-nuget\TailwindMerge\bin\Debug\net8.0\TailwindMerge.dll
+F:\Projects\Git\tailwind-merge-nuget\TailwindMerge\bin\Debug\net8.0\TailwindMerge.pdb
+F:\Projects\Git\tailwind-merge-nuget\TailwindMerge\obj\Debug\net8.0\TailwindMerge.GeneratedMSBuildEditorConfig.editorconfig
+F:\Projects\Git\tailwind-merge-nuget\TailwindMerge\obj\Debug\net8.0\TailwindMerge.AssemblyInfoInputs.cache
+F:\Projects\Git\tailwind-merge-nuget\TailwindMerge\obj\Debug\net8.0\TailwindMerge.AssemblyInfo.cs
+F:\Projects\Git\tailwind-merge-nuget\TailwindMerge\obj\Debug\net8.0\TailwindMerge.csproj.CoreCompileInputs.cache
+F:\Projects\Git\tailwind-merge-nuget\TailwindMerge\obj\Debug\net8.0\TailwindMerge.sourcelink.json
+F:\Projects\Git\tailwind-merge-nuget\TailwindMerge\obj\Debug\net8.0\TailwindMerge.dll
+F:\Projects\Git\tailwind-merge-nuget\TailwindMerge\obj\Debug\net8.0\refint\TailwindMerge.dll
+F:\Projects\Git\tailwind-merge-nuget\TailwindMerge\obj\Debug\net8.0\TailwindMerge.pdb
+F:\Projects\Git\tailwind-merge-nuget\TailwindMerge\obj\Debug\net8.0\ref\TailwindMerge.dll
