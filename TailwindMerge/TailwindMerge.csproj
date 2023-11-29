@@ -15,6 +15,7 @@
     <PackageReadmeFile>README.md</PackageReadmeFile>
     <RepositoryUrl>https://github.com/AaronLayton/tailwind-merge-nuget</RepositoryUrl>
     <PackageTags>tailwind, tailwindcss, merge</PackageTags>
+    <PackageLicenseFile>LICENSE.md</PackageLicenseFile>
 
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
   </PropertyGroup>
@@ -28,6 +29,7 @@
       <Pack>True</Pack>
       <PackagePath>\</PackagePath>
     </None>
+    <None Include="..\LICENSE.md" Pack="true" PackagePath="LICENSE.md"/>
   </ItemGroup>
 
   <ItemGroup>
