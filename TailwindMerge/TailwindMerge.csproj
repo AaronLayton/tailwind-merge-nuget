@@ -16,7 +16,7 @@
     <RepositoryUrl>https://github.com/AaronLayton/tailwind-merge-nuget</RepositoryUrl>
     <PackageTags>tailwind, tailwindcss, merge</PackageTags>
 
-    <NoWarn>$(NoWarn);CS1591</NoWarn>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
   </PropertyGroup>
 
   <ItemGroup>
