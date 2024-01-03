@@ -19,6 +19,8 @@
     <PackageLicenseFile>LICENSE.md</PackageLicenseFile>
 
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <!-- Suppress CS1591 warnings -->
+    <NoWarn>$(NoWarn);CS1591</NoWarn>
   </PropertyGroup>
 
   <ItemGroup>
