@@ -15,13 +15,13 @@ namespace TailwindMerge
             ClassPart classMap = new();
 
             Dictionary<string, List<object>> prefixedClassGroups = GetPrefixedClassGroups(
-                config.ClassGroups,
-                config.Prefix
+                config.ClassGroupsValue,
+                config.PrefixValue
             );
 
             foreach (var (classGroupId, classGroup) in prefixedClassGroups)
             {
-                ProcessClassesRecursively(classGroup, classMap, classGroupId, config.Theme);
+                ProcessClassesRecursively(classGroup, classMap, classGroupId, config.ThemeValue);
             }
 
             return classMap;

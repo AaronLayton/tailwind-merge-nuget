@@ -35,11 +35,11 @@ namespace TailwindMerge.Utilities
 
         public List<string> GetConflictingClassGroupIds(string classGroupId, bool hasPostfixModifier)
         {
-            var conflicts = _config.ConflictingClassGroups.GetValueOrDefault(classGroupId) ?? new List<string>();
+            var conflicts = _config.ConflictingClassGroupsValue.GetValueOrDefault(classGroupId) ?? new List<string>();
 
-            if (hasPostfixModifier && _config.ConflictingClassGroupModifiers.ContainsKey(classGroupId))
+            if (hasPostfixModifier && _config.ConflictingClassGroupModifiersValue.ContainsKey(classGroupId))
             {
-                conflicts.AddRange(_config.ConflictingClassGroupModifiers[classGroupId]);
+                conflicts.AddRange(_config.ConflictingClassGroupModifiersValue[classGroupId]);
             }
 
             return conflicts;
@@ -47,7 +47,7 @@ namespace TailwindMerge.Utilities
 
         public ClassModifiersContext SplitModifiers(string className)
         {
-            var separator = _config.Separator;
+            var separator = _config.SeparatorValue;
             var modifiers = new List<string>();
             var bracketDepth = 0;
             var modifierStart = 0;
