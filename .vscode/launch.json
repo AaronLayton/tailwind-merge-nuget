@@ -1,0 +1,32 @@
+{
+	// Use IntelliSense to learn about possible attributes.
+	// Hover to view descriptions of existing attributes.
+	// For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+	"version": "0.2.0",
+	"configurations": [
+        {
+			"name": "Debug",
+			"type": "coreclr",
+			"request": "launch",
+			"preLaunchTask": "Build",
+			"program": "${workspaceFolder}/TailwindMergeExample.Web/bin/Debug/net8.0/TailwindMergeExample.Web.dll",
+			"args": [],
+			"cwd": "${workspaceFolder}/TailwindMergeExample.Web",
+			"stopAtEntry": false,
+			"requireExactSource": false,
+			"serverReadyAction": {
+				"action": "openExternally",
+				"pattern": "\\bNow listening on:\\s+(https?://\\S+)"
+			},
+			"env": {
+				"ASPNETCORE_ENVIRONMENT": "Development",
+				"ASPNETCORE_URLS": "https://localhost:44367/",
+				"ASPNETCORE_SOLUTION": "DebugTest",
+				"ASPNETCORE_HOSTINGSTARTUPASSEMBLIES": "Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation"
+			},
+			"sourceFileMap": {
+				"/Views": "${workspaceFolder}/Views"
+			},
+		},
+    ]
+}

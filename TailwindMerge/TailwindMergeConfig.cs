@@ -4,6 +4,7 @@ using TailwindMerge.Exceptions;
 using TailwindMerge.Interfaces;
 using TailwindMerge.Rules;
 using TailwindMerge.Utilities;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace TailwindMerge
 {
@@ -22,7 +23,7 @@ namespace TailwindMerge
             string separator = ":",
             string? prefix = null,
             Dictionary<string, object>? theme = null,
-            Dictionary<string, object>? classGroups = null,
+            Dictionary<string, List<object>>? classGroups = null,
             Dictionary<string, List<string>>? conflictingClassGroups = null,
             Dictionary<string, List<string>>? conflictingClassGroupModifiers = null)
         {
@@ -78,7 +79,7 @@ namespace TailwindMerge
             return Validate();
         }
 
-        public TailwindMergeConfig ClassGroups(Dictionary<string, object> classGroups, bool extend = true)
+        public TailwindMergeConfig ClassGroups(Dictionary<string, List<object>> classGroups, bool extend = true)
         {
             ClassGroupsValue = extend ? Merge(ClassGroupsValue, classGroups) : classGroups;
             return Validate();
@@ -148,9 +149,39 @@ namespace TailwindMerge
 
         public static TailwindMergeConfig Default()
         {
-            // Default configuration logic here
-            // Instantiate and assign default values for rules and theme getters
-            return new TailwindMergeConfig();
+            var colors = new ThemeGetter("colors");
+            
+            // Set up default values for each property.
+            var defaultTheme = new Dictionary<string, object>
+            {
+                'colors' = colors,
+            };
+
+            var defaultClassGroups = new Dictionary<string, List<object>>
+            {
+                // Populate with default class group values
+            };
+
+            var defaultConflictingClassGroups = new Dictionary<string, List<string>>
+            {
+                // Populate with default conflicting class group values
+            };
+
+            var defaultConflictingClassGroupModifiers = new Dictionary<string, List<string>>
+            {
+                // Populate with default conflicting class group modifier values
+            };
+            
+            
+            return new TailwindMergeConfig(
+                cacheSize: 500, // Default cache size
+                separator: ":", // Default separator
+                prefix: null,  // Default prefix
+                theme: defaultTheme,
+                classGroups: defaultClassGroups,
+                conflictingClassGroups: defaultConflictingClassGroups,
+                conflictingClassGroupModifiers: defaultConflictingClassGroupModifiers
+            );
         }
 
 

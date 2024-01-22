@@ -1,0 +1,76 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "Clean",
+			"command": "dotnet",
+			"type": "process",
+			"args": ["clean","${workspaceFolder}/tailwind-merge-nuget.sln" ,"/consoleloggerparameters:PerformanceSummary;Summary"],
+			"problemMatcher": "$msCompile"
+		},
+		{
+			"label": "Build",
+			"command": "dotnet",
+			"type": "process",
+			"args": [
+				"build",
+				"${workspaceFolder}/TailwindMergeExample.Web/TailwindMergeExample.Web.csproj",
+				"/property:GenerateFullPaths=true",
+				"/consoleloggerparameters:PerformanceSummary;Summary"
+			],
+			"problemMatcher": "$msCompile"
+		},
+		{
+			"label": "Build SLN",
+			"command": "dotnet",
+			"type": "process",
+			"args": [
+				"build",
+				"${workspaceFolder}/tailwind-merge-nuget.sln",
+				"/property:GenerateFullPaths=true",
+				"/consoleloggerparameters:PerformanceSummary;Summary"
+			],
+			"problemMatcher": "$msCompile"
+		},
+		{
+			"label": "Test",
+			"command": "dotnet",
+			"type": "process",
+			"args": [
+				"test",
+				"${workspaceFolder}/tailwind-merge-nuget.sln",
+				"/property:GenerateFullPaths=true",
+				"/consoleloggerparameters:PerformanceSummary;Summary"
+			],
+			"problemMatcher": "$msCompile"
+		},
+		{
+			"label": "Release",
+			"command": "dotnet",
+			"type": "process",
+			"args": [
+				"build",
+				"${workspaceFolder}/TailwindMerge/TailwindMerge.csproj",
+				"-c",
+                "Release",
+				"/property:GenerateFullPaths=true",
+				"/consoleloggerparameters:PerformanceSummary;Summary"
+			],
+			"problemMatcher": "$msCompile"
+		},
+		{
+			"label": "Watch",
+			"command": "dotnet",
+			"type": "process",
+			"args": ["watch", "run", "--project", "${workspaceFolder}/TailwindMerge/TailwindMerge.csproj"],
+			"problemMatcher": "$msCompile"
+		},
+		{
+			"label": "NuGet Restore",
+			"command": "dotnet",
+			"type": "process",
+			"args": ["restore","/consoleloggerparameters:PerformanceSummary;Summary"],
+			"problemMatcher": "$msCompile"
+		}
+	]
+}
