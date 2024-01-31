@@ -29,11 +29,11 @@ namespace TailwindMerge
         {
             string joinedClassList = Join(classList);
 
-            //string? cachedResult = _cache.Get(joinedClassList);
-            //if (cachedResult != null)
-            //{
-            //    return cachedResult;
-            //}
+            string? cachedResult = _cache.Get(joinedClassList);
+            if (cachedResult != null)
+            {
+                return cachedResult;
+            }
 
             string result = MergeClassList(joinedClassList);
             _cache.Set(joinedClassList, result);
@@ -63,9 +63,9 @@ namespace TailwindMerge
         {
             var classes = Regex.Split(classList.Trim(), SplitClassesRegex)
                                .Select(DetermineClassContext)
-                               .ToArray();
+                               .ToList();
 
-            classes = FilterConflictingClasses(classes).ToArray();
+            classes = FilterConflictingClasses(classes);
 
             return string.Join(" ", classes.Select(c => c.OriginalClassName));
         }
@@ -119,22 +119,24 @@ namespace TailwindMerge
             );
         }
 
-        private IEnumerable<ClassContext> FilterConflictingClasses(ClassContext[] classes)
+        public List<ClassContext> FilterConflictingClasses(List<ClassContext> classes)
         {
             var classGroupsInConflict = new HashSet<string>();
 
-            foreach (var context in classes)
+            // reverse the list
+            classes.Reverse();
+
+            var filteredClasses = classes.Where(context =>
             {
                 if (!context.IsTailwindClass)
                 {
-                    yield return context;
-                    continue;
+                    return true;
                 }
 
-                var classId = context.ModifierId + context.ClassGroupId;
+                string classId = context.ModifierId + context.ClassGroupId;
                 if (classGroupsInConflict.Contains(classId))
                 {
-                    continue;
+                    return false;
                 }
 
                 classGroupsInConflict.Add(classId);
@@ -145,8 +147,12 @@ namespace TailwindMerge
                     classGroupsInConflict.Add(context.ModifierId + group);
                 }
 
-                yield return context;
-            }
+                return true;
+            }).ToList();
+
+            filteredClasses.Reverse();
+
+            return filteredClasses;
         }
     }
 }

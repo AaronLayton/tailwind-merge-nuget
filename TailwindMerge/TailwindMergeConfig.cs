@@ -191,24 +191,52 @@ namespace TailwindMerge
             var space = new ThemeGetter("space");
             var translate = new ThemeGetter("translate");
 
+
+            // common class groups
+            var overscroll = new List<object> { "auto", "contain", "none" };
+            var overflow = new List<object> { "auto", "hidden", "clip", "visible", "scroll" };
+            var spacingWithAutoAndArbitrary = new List<object> { "auto", isArbitraryValue, spacing };
+            var spacingWithArbitrary = new List<object> { isArbitraryValue, spacing };
+            var lengthWithEmpty = new List<object> { "", isLength, isArbitraryLength };
+            var numberWithAutoAndArbitrary = new List<object> { "auto", isNumber, isArbitraryValue };
+            var positions = new List<object>
+            {
+                "bottom", "center", "left", "left-bottom", "left-top", "right",
+                "right-bottom", "right-top", "top"
+            };
+            var lineStyles = new List<object> { "solid", "dashed", "dotted", "double", "none" };
+            var blendModes = new List<object>
+            {
+                "normal", "multiply", "screen", "overlay", "darken", "lighten", "color-dodge", "color-burn",
+                "hard-light", "soft-light", "difference", "exclusion", "hue", "saturation", "color",
+                "luminosity", "plus-lighter"
+            };
+            var align = new List<object> { "start", "end", "center", "between", "around", "evenly", "stretch" };
+            var zeroAndEmpty = new List<object> { "", "0", isArbitraryValue };
+            var breaks = new List<object> { "auto", "avoid", "all", "avoid-page", "page", "left", "right", "column" };
+            var number = new List<object> { isNumber, isArbitraryNumber };
+            var numberAndArbitrary = new List<object> { isNumber, isArbitraryValue };
+
+
+
             // Set up default values for each property.
             var defaultTheme = new Dictionary<string, object>
             {
-                //{ "colors", new List<object> { isAny } },
-                //{ "spacing", new List<object> { isLength, isArbitraryLength } },
-                //{ "blur", new List<object> { "none", "", isTshirtSize, isArbitraryValue } },
-                //{ "brightness", GetNumberAndArbitrary() },
-                //{ "borderColor", new List<object> { colors } },
-                //{ "borderRadius", new List<object> { "none", "", "full", isTshirtSize, isArbitraryValue } },
-                //{ "borderSpacing", GetSpacingWithArbitrary() },
+                { "colors", new List<object> { isAny } },
+                { "spacing", new List<object> { isLength, isArbitraryLength } },
+                { "blur", new List<object> { "none", "", isTshirtSize, isArbitraryValue } },
+                { "brightness", numberAndArbitrary },
+                { "borderColor", new List<object> { colors } },
+                { "borderRadius", new List<object> { "none", "", "full", isTshirtSize, isArbitraryValue } },
+                { "borderSpacing", spacingWithArbitrary },
                 //{ "borderWidth", GetLengthWithEmptyAndArbitrary() },
                 //{ "contrast", GetNumberAndArbitrary() },
                 //{ "grayscale", GetZeroAndEmpty() },
                 //{ "hueRotate", GetNumberAndArbitrary() },
                 //{ "invert", GetZeroAndEmpty() },
                 //{ "gap", GetSpacingWithArbitrary() },
-                //{ "gradientColorStops", new List<object> { colors } },
-                //{ "gradientColorStopPositions", new List<object> { isPercent, isArbitraryLength } },
+                { "gradientColorStops", new List<object> { colors } },
+                { "gradientColorStopPositions", new List<object> { isPercent, isArbitraryLength } },
                 //{ "inset", GetSpacingWithAutoAndArbitrary() },
                 //{ "margin", GetSpacingWithAutoAndArbitrary() },
                 //{ "opacity", GetNumberAndArbitrary() },
@@ -223,14 +251,9 @@ namespace TailwindMerge
 
             var defaultClassGroups = new Dictionary<string, List<object>>
             {
-                //{
-                //    "display", new List<object>
-                //    {
-                //        "block", "inline-block", "inline", "flex", // etc.
-                //    }
-                //},
                  {
-                    "aspect", new List<object>
+                    "aspect", 
+                    new List<object>
                     {
                         new Dictionary<string, List<object>>
                         {
@@ -238,18 +261,52 @@ namespace TailwindMerge
                         }
                     }
                 },
+                 {
+                    "gubby",
+                    new List<object>
+                    {
+                        new Dictionary<string, List<object>>
+                        {
+                            { "gubby", new List<object> { "correct", "wrong", "wizard" } } // Replace "isArbitraryValue" as needed
+                        }
+                    }
+                },
+                {
+                "overflow",
+                    new List<object>
+                    {
+                        new Dictionary<string, List<object>> 
+                        { 
+                            { "overflow", overflow } 
+                        }
+                    }
+                },
+                 {
+                    "overflow-x",
+                    new List<object>
+                    {
+                        new Dictionary<string, List<object>>  { { "overflow-x", overflow } }
+                    }
+                },
+                {
+                    "overflow-y",
+                    new List<object>
+                    {
+                        new Dictionary<string, List<object>>  { { "overflow-y", overflow } }
+                    }
+                },
 
             };
 
             var defaultConflictingClassGroups = new Dictionary<string, List<string>>
             {
-                //{ "overflow", new List<string> { "overflow-x", "overflow-y" } },
-                //{ "inset", new List<string> { "inset-x", "inset-y", "top", "right", "bottom", "left" } },
+                { "overflow", new List<string> { "overflow-x", "overflow-y" } },
+                { "inset", new List<string> { "inset-x", "inset-y", "top", "right", "bottom", "left" } },
             };
 
             var defaultConflictingClassGroupModifiers = new Dictionary<string, List<string>>
             {
-                //{ "font-size", new List<string> { "leading" } },
+                { "font-size", new List<string> { "leading" } },
             };
             
             
@@ -287,28 +344,5 @@ namespace TailwindMerge
             // Return true if valid, false otherwise
             return value is string || value is IRule || value is ThemeGetter;
         }
-
-        public static string[] GetOverscroll() => new[] { "auto", "contain", "none" };
-        public static string[] GetOverflow() => new[] { "auto", "hidden", "clip", "visible", "scroll" };
-        public static object[] GetSpacingWithAutoAndArbitrary() => new object[] { "auto", new Func<string, bool>(Validators.IsArbitraryValue), new Func<string, bool>(Validators.IsLength) };
-
-
-        public static object[] GetSpacingWithArbitrary() => new object[] { Validators.IsArbitraryValue, Validators.IsLength };
-
-        public static object[] GetLengthWithEmptyAndArbitrary() => new object[] { "", Validators.IsLength, Validators.IsArbitraryLength };
-
-        public static object[] GetNumberWithAutoAndArbitrary() => new object[] { "auto", Validators.IsNumber, Validators.IsArbitraryValue };
-
-        public static string[] GetPositions() => new[] { "bottom", "center", "left", "left-bottom", "left-top", "right", "right-bottom", "right-top", "top" };
-        public static string[] GetLineStyles() => new[] { "solid", "dashed", "dotted", "double", "none" };
-        public static string[] GetBlendModes() => new[] { "normal", "multiply", "screen", "overlay", "darken", "lighten", "color-dodge", "color-burn", "hard-light", "soft-light", "difference", "exclusion", "hue", "saturation", "color", "luminosity", "plus-lighter" };
-        public static string[] GetAlign() => new[] { "start", "end", "center", "between", "around", "evenly", "stretch" };
-        public static object[] GetZeroAndEmpty() => new object[] { "", "0", Validators.IsArbitraryValue };
-
-        public static string[] GetBreaks() => new[] { "auto", "avoid", "all", "avoid-page", "page", "left", "right", "column" };
-        public static Func<string, bool>[] GetNumber() => new Func<string, bool>[] { Validators.IsNumber, Validators.IsArbitraryNumber };
-
-
-        public static Func<string, bool>[] GetNumberAndArbitrary() => new Func<string, bool>[] { Validators.IsNumber, Validators.IsArbitraryValue };
     }
 }

@@ -27,10 +27,26 @@ namespace TailwindMerge
             return classMap;
         }
 
+        // todo
         private static void ProcessClassesRecursively(List<object> classGroup, ClassPart classPart, string classGroupId, Dictionary<string, object> theme)
         {
-            foreach (var classDefinition in classGroup)
+             foreach (var classDefinition in classGroup)
             {
+                // Check if classDefinition is a dictionary
+                if (classDefinition is Dictionary<string, List<object>> classDefDict)
+                {
+                    foreach (var (key, value) in classDefDict)
+                    {
+                        if (value is List<object> nestedClassGroup)
+                        {
+                            ClassPart nestedClassPart = GetPart(classPart, key);
+                            ProcessClassesRecursively(nestedClassGroup, nestedClassPart, classGroupId, theme);
+                        }
+                    }
+                    continue;
+                }
+
+                // Handle other possible types (string, ThemeGetter, IRule)
                 if (classDefinition is string classDefString)
                 {
                     ClassPart classPartToEdit = classDefString == string.Empty ? classPart : GetPart(classPart, classDefString);
@@ -41,47 +57,19 @@ namespace TailwindMerge
                 if (classDefinition is ThemeGetter themeGetter)
                 {
                     Dictionary<string, dynamic> themeResult = themeGetter.Execute(theme);
-
-                    // Convert the themeResult dictionary to a List<object>
-                    List<object> themeList = new List<object>();
-                    foreach (var kvp in themeResult)
-                    {
-                        var themeItem = new Dictionary<string, dynamic>
-                        {
-                            { kvp.Key, kvp.Value }
-                        };
-                        themeList.Add(themeItem);
-                    }
-
-                    ProcessClassesRecursively(
-                        themeList,
-                        classPart,
-                        classGroupId,
-                        theme
-                    );
-                    continue;
-}
-
-                if (classDefinition is IRule ruleInterface)
-                {
-                    classPart.Validators.Add(new ClassValidator(classGroupId, ruleInterface));
+                    List<object> themeList = themeResult.Select(kvp => (object)new Dictionary<string, dynamic> { { kvp.Key, kvp.Value } }).ToList();
+                    ProcessClassesRecursively(themeList, classPart, classGroupId, theme);
                     continue;
                 }
 
-                if (classDefinition is Dictionary<string, object> classDefDict)
+                if (classDefinition is IRule rule)
                 {
-                    foreach (var (key, value) in classDefDict)
-                    {
-                        ProcessClassesRecursively(
-                            (List<object>)value,
-                            GetPart(classPart, key),
-                            classGroupId,
-                            theme
-                        );
-                    }
+                    classPart.Validators.Add(new ClassValidator(classGroupId, rule));
+                    continue;
                 }
             }
         }
+
 
         private static ClassPart GetPart(ClassPart classPart, string path)
         {
