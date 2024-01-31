@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Numerics;
 using TailwindMerge.Exceptions;
 using TailwindMerge.Interfaces;
 using TailwindMerge.Rules;
@@ -149,27 +150,106 @@ namespace TailwindMerge
 
         public static TailwindMergeConfig Default()
         {
+            var isTshirtSize = new TshirtSizeRule();
+            var isArbitraryLength = new ArbitraryLengthRule();
+            var isAny = new AnyRule();
+            var isArbitraryPosition = new ArbitraryPositionRule();
+            var isArbitrarySize = new ArbitrarySizeRule();
+            var isArbitraryUrl = new ArbitraryUrlRule();
+            var isArbitraryShadow = new ArbitraryShadowRule();
+            var isInteger = new IntegerRule();
+            var isLength = new LengthRule();
+            var isNumber = new NumberRule();
+            var isPercent = new PercentRule();
+            var isArbitraryValue = new ArbitraryValueRule();
+            var isArbitraryNumber = new ArbitraryNumberRule();
+            var isArbitraryInteger = new ArbitraryIntegerRule();
+
             var colors = new ThemeGetter("colors");
-            
+            var spacing = new ThemeGetter("spacing");
+            var blur = new ThemeGetter("blur");
+            var brightness = new ThemeGetter("brightness");
+            var borderColor = new ThemeGetter("borderColor");
+            var borderRadius = new ThemeGetter("borderRadius");
+            var borderSpacing = new ThemeGetter("borderSpacing");
+            var borderWidth = new ThemeGetter("borderWidth");
+            var contrast = new ThemeGetter("contrast");
+            var grayscale = new ThemeGetter("grayscale");
+            var hueRotate = new ThemeGetter("hueRotate");
+            var invert = new ThemeGetter("invert");
+            var gap = new ThemeGetter("gap");
+            var gradientColorStops = new ThemeGetter("gradientColorStops");
+            var gradientColorStopPositions = new ThemeGetter("gradientColorStopPositions");
+            var inset = new ThemeGetter("inset");
+            var margin = new ThemeGetter("margin");
+            var opacity = new ThemeGetter("opacity");
+            var padding = new ThemeGetter("padding");
+            var saturate = new ThemeGetter("saturate");
+            var scale = new ThemeGetter("scale");
+            var sepia = new ThemeGetter("sepia");
+            var skew = new ThemeGetter("skew");
+            var space = new ThemeGetter("space");
+            var translate = new ThemeGetter("translate");
+
             // Set up default values for each property.
             var defaultTheme = new Dictionary<string, object>
             {
-                'colors' = colors,
+                //{ "colors", new List<object> { isAny } },
+                //{ "spacing", new List<object> { isLength, isArbitraryLength } },
+                //{ "blur", new List<object> { "none", "", isTshirtSize, isArbitraryValue } },
+                //{ "brightness", GetNumberAndArbitrary() },
+                //{ "borderColor", new List<object> { colors } },
+                //{ "borderRadius", new List<object> { "none", "", "full", isTshirtSize, isArbitraryValue } },
+                //{ "borderSpacing", GetSpacingWithArbitrary() },
+                //{ "borderWidth", GetLengthWithEmptyAndArbitrary() },
+                //{ "contrast", GetNumberAndArbitrary() },
+                //{ "grayscale", GetZeroAndEmpty() },
+                //{ "hueRotate", GetNumberAndArbitrary() },
+                //{ "invert", GetZeroAndEmpty() },
+                //{ "gap", GetSpacingWithArbitrary() },
+                //{ "gradientColorStops", new List<object> { colors } },
+                //{ "gradientColorStopPositions", new List<object> { isPercent, isArbitraryLength } },
+                //{ "inset", GetSpacingWithAutoAndArbitrary() },
+                //{ "margin", GetSpacingWithAutoAndArbitrary() },
+                //{ "opacity", GetNumberAndArbitrary() },
+                //{ "padding", GetSpacingWithArbitrary() },
+                //{ "saturate", GetNumberAndArbitrary() },
+                //{ "scale", GetNumberAndArbitrary() },
+                //{ "sepia", GetZeroAndEmpty() },
+                //{ "skew", GetNumberAndArbitrary() },
+                //{ "space", GetSpacingWithArbitrary() },
+                //{ "translate", GetSpacingWithArbitrary() }
             };
 
             var defaultClassGroups = new Dictionary<string, List<object>>
             {
-                // Populate with default class group values
+                //{
+                //    "display", new List<object>
+                //    {
+                //        "block", "inline-block", "inline", "flex", // etc.
+                //    }
+                //},
+                 {
+                    "aspect", new List<object>
+                    {
+                        new Dictionary<string, List<object>>
+                        {
+                            { "aspect", new List<object> { "auto", "square", "video", isArbitraryValue } } // Replace "isArbitraryValue" as needed
+                        }
+                    }
+                },
+
             };
 
             var defaultConflictingClassGroups = new Dictionary<string, List<string>>
             {
-                // Populate with default conflicting class group values
+                //{ "overflow", new List<string> { "overflow-x", "overflow-y" } },
+                //{ "inset", new List<string> { "inset-x", "inset-y", "top", "right", "bottom", "left" } },
             };
 
             var defaultConflictingClassGroupModifiers = new Dictionary<string, List<string>>
             {
-                // Populate with default conflicting class group modifier values
+                //{ "font-size", new List<string> { "leading" } },
             };
             
             
@@ -207,5 +287,28 @@ namespace TailwindMerge
             // Return true if valid, false otherwise
             return value is string || value is IRule || value is ThemeGetter;
         }
+
+        public static string[] GetOverscroll() => new[] { "auto", "contain", "none" };
+        public static string[] GetOverflow() => new[] { "auto", "hidden", "clip", "visible", "scroll" };
+        public static object[] GetSpacingWithAutoAndArbitrary() => new object[] { "auto", new Func<string, bool>(Validators.IsArbitraryValue), new Func<string, bool>(Validators.IsLength) };
+
+
+        public static object[] GetSpacingWithArbitrary() => new object[] { Validators.IsArbitraryValue, Validators.IsLength };
+
+        public static object[] GetLengthWithEmptyAndArbitrary() => new object[] { "", Validators.IsLength, Validators.IsArbitraryLength };
+
+        public static object[] GetNumberWithAutoAndArbitrary() => new object[] { "auto", Validators.IsNumber, Validators.IsArbitraryValue };
+
+        public static string[] GetPositions() => new[] { "bottom", "center", "left", "left-bottom", "left-top", "right", "right-bottom", "right-top", "top" };
+        public static string[] GetLineStyles() => new[] { "solid", "dashed", "dotted", "double", "none" };
+        public static string[] GetBlendModes() => new[] { "normal", "multiply", "screen", "overlay", "darken", "lighten", "color-dodge", "color-burn", "hard-light", "soft-light", "difference", "exclusion", "hue", "saturation", "color", "luminosity", "plus-lighter" };
+        public static string[] GetAlign() => new[] { "start", "end", "center", "between", "around", "evenly", "stretch" };
+        public static object[] GetZeroAndEmpty() => new object[] { "", "0", Validators.IsArbitraryValue };
+
+        public static string[] GetBreaks() => new[] { "auto", "avoid", "all", "avoid-page", "page", "left", "right", "column" };
+        public static Func<string, bool>[] GetNumber() => new Func<string, bool>[] { Validators.IsNumber, Validators.IsArbitraryNumber };
+
+
+        public static Func<string, bool>[] GetNumberAndArbitrary() => new Func<string, bool>[] { Validators.IsNumber, Validators.IsArbitraryValue };
     }
 }

@@ -29,11 +29,11 @@ namespace TailwindMerge
         {
             string joinedClassList = Join(classList);
 
-            string? cachedResult = _cache.Get(joinedClassList);
-            if (cachedResult != null)
-            {
-                return cachedResult;
-            }
+            //string? cachedResult = _cache.Get(joinedClassList);
+            //if (cachedResult != null)
+            //{
+            //    return cachedResult;
+            //}
 
             string result = MergeClassList(joinedClassList);
             _cache.Set(joinedClassList, result);

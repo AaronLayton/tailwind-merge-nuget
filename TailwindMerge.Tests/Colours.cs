@@ -1,5 +1,4 @@
 namespace TailwindMerge.Tests;
-using TailwindMerge; // Replace with the namespace of your class library
 
 public class ColoursTests
 {
