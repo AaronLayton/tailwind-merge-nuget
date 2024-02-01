@@ -138,6 +138,8 @@ namespace TailwindMerge.Utilities
             }
 
             var currentClassPart = classParts[0];
+
+
             if (classPart.NextPart.TryGetValue(currentClassPart, out var nextClassPartObject))
             {
                 var classGroupFromNextClassPart = GetGroupRecursive(classParts[1..], nextClassPartObject);
