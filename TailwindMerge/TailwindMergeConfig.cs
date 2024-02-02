@@ -261,17 +261,17 @@ namespace TailwindMerge
                         }
                     }
                 },
-                {
-                    "container",
-                    new List<object> { "container" }
-                },
+                //{
+                //    "container",
+                //    new List<object> { "container" }
+                //},
                 {
                     "columns",
                     new List<object>
                     {
                         new Dictionary<string, List<object>>
                         {
-                            { "columns", new List<object> { isTshirtSize } }
+                            { "columns", new List<object> { isTshirtSize, isNumber} }
                         }
                     }
                 },
@@ -281,7 +281,7 @@ namespace TailwindMerge
                     {
                         new Dictionary<string, List<object>>
                         {
-                            { "break-after", new List<object> { "getBreaks()" } }
+                            { "break-after", new List<object> { breaks } }
                         }
                     }
                 },
@@ -291,7 +291,7 @@ namespace TailwindMerge
                     {
                         new Dictionary<string, List<object>>
                         {
-                            { "break-before", new List<object> { "getBreaks()" } }
+                            { "break-before", new List<object> { breaks } }
                         }
                     }
                 },
@@ -376,7 +376,7 @@ namespace TailwindMerge
                     {
                         new Dictionary<string, List<object>>
                         {
-                            { "object", new List<object> { "...getPositions()", "isArbitraryValue" } } // Adjust with actual method or values
+                            { "object", new List<object> { positions, isArbitraryValue } } // Adjust with actual method or values
                         }
                     }
                 },
@@ -386,7 +386,7 @@ namespace TailwindMerge
                     {
                         new Dictionary<string, List<object>>
                         {
-                            { "overflow", new List<object> { "getOverflow()" } } // Adjust with actual method or values
+                            { "overflow", new List<object> { overflow } } // Adjust with actual method or values
                         }
                     }
                 },
@@ -396,7 +396,7 @@ namespace TailwindMerge
                     {
                         new Dictionary<string, List<object>>
                         {
-                            { "overflow-x", new List<object> { "getOverflow()" } } // Adjust with actual method or values
+                            { "overflow-x", new List<object> { overflow } } // Adjust with actual method or values
                         }
                     }
                 },
@@ -406,7 +406,7 @@ namespace TailwindMerge
                     {
                         new Dictionary<string, List<object>>
                         {
-                            { "overflow-y", new List<object> { "getOverflow()" } } // Adjust with actual method or values
+                            { "overflow-y", new List<object> { overflow } } // Adjust with actual method or values
                         }
                     }
                 },
@@ -416,7 +416,7 @@ namespace TailwindMerge
                     {
                         new Dictionary<string, List<object>>
                         {
-                            { "overscroll", new List<object> { "getOverscroll()" } } // Adjust with actual method or values
+                            { "overscroll", new List<object> { overscroll } } // Adjust with actual method or values
                         }
                     }
                 },
@@ -426,7 +426,7 @@ namespace TailwindMerge
                     {
                         new Dictionary<string, List<object>>
                         {
-                            { "overscroll-x", new List<object> { "getOverscroll()" } } // Adjust with actual method or values
+                            { "overscroll-x", new List<object> { overscroll } } // Adjust with actual method or values
                         }
                     }
                 },
@@ -436,14 +436,14 @@ namespace TailwindMerge
                     {
                         new Dictionary<string, List<object>>
                         {
-                            { "overscroll-y", new List<object> { "getOverscroll()" } } // Adjust with actual method or values
+                            { "overscroll-y", new List<object> { overscroll } } // Adjust with actual method or values
                         }
                     }
                 },
-                {
-                    "position",
-                    new List<object> { "static", "fixed", "absolute", "relative", "sticky" }
-                },
+                //{
+                //    "position",
+                //    new List<object> { "static", "fixed", "absolute", "relative", "sticky" }
+                //},
 
                 {
                     "inset",
@@ -451,7 +451,9 @@ namespace TailwindMerge
                     {
                         new Dictionary<string, List<object>>
                         {
-                            { "inset", new List<object> { "inset" } } // Assuming "inset" is a variable or method to be replaced
+                            {
+                              "inset", new List<object> { inset }
+                            } // Assuming inset is a variable or method to be replaced
                         }
                     }
                 },
@@ -461,7 +463,7 @@ namespace TailwindMerge
                     {
                         new Dictionary<string, List<object>>
                         {
-                            { "inset-x", new List<object> { "inset" } } // Adjust with actual variable or method
+                            { "inset-x", new List<object> { inset } } // Adjust with actual variable or method
                         }
                     }
                 },
@@ -471,7 +473,7 @@ namespace TailwindMerge
                     {
                         new Dictionary<string, List<object>>
                         {
-                            { "inset-y", new List<object> { "inset" } } // Adjust with actual variable or method
+                            { "inset-y", new List<object> { inset } } // Adjust with actual variable or method
                         }
                     }
                 },
@@ -481,7 +483,7 @@ namespace TailwindMerge
                     {
                         new Dictionary<string, List<object>>
                         {
-                            { "start", new List<object> { "inset" } } // Adjust with actual variable or method
+                            { "start", new List<object> { inset } } // Adjust with actual variable or method
                         }
                     }
                 },
@@ -491,7 +493,7 @@ namespace TailwindMerge
                     {
                         new Dictionary<string, List<object>>
                         {
-                            { "end", new List<object> { "inset" } } // Adjust with actual variable or method
+                            { "end", new List<object> { inset } } // Adjust with actual variable or method
                         }
                     }
                 },
@@ -501,7 +503,7 @@ namespace TailwindMerge
                     {
                         new Dictionary<string, List<object>>
                         {
-                            { "top", new List<object> { "inset" } } // Adjust with actual variable or method
+                            { "top", new List<object> { inset } } // Adjust with actual variable or method
                         }
                     }
                 },
@@ -511,7 +513,7 @@ namespace TailwindMerge
                     {
                         new Dictionary<string, List<object>>
                         {
-                            { "right", new List<object> { "inset" } } // Adjust with actual variable or method
+                            { "right", new List<object> { inset } } // Adjust with actual variable or method
                         }
                     }
                 },
@@ -521,7 +523,7 @@ namespace TailwindMerge
                     {
                         new Dictionary<string, List<object>>
                         {
-                            { "bottom", new List<object> { "inset" } } // Adjust with actual variable or method
+                            { "bottom", new List<object> { inset } } // Adjust with actual variable or method
                         }
                     }
                 },
@@ -531,21 +533,21 @@ namespace TailwindMerge
                     {
                         new Dictionary<string, List<object>>
                         {
-                            { "left", new List<object> { "inset" } } // Adjust with actual variable or method
+                            { "left", new List<object> { inset } } // Adjust with actual variable or method
                         }
                     }
                 },
-                {
-                    "visibility",
-                    new List<object> { "visible", "invisible", "collapse" }
-                },
+                //{
+                //    "visibility",
+                //    new List<object> { "visible", "invisible", "collapse" }
+                //},
                 {
                     "z",
                     new List<object>
                     {
                         new Dictionary<string, List<object>>
                         {
-                            { "z", new List<object> { "auto", "isInteger", "isArbitraryValue" } } // Use actual variables or methods
+                            { "z", new List<object> { "auto", isInteger, isArbitraryValue } } // Use actual variables or methods
                         }
                     }
                 },
@@ -556,7 +558,7 @@ namespace TailwindMerge
                     {
                         new Dictionary<string, List<object>>
                         {
-                            { "basis", new List<object> { "getSpacingWithAutoAndArbitrary()" } } // Use actual function call
+                            { "basis", new List<object> { spacingWithAutoAndArbitrary } } // Use actual function call
                         }
                     }
                 },
@@ -586,7 +588,7 @@ namespace TailwindMerge
                     {
                         new Dictionary<string, List<object>>
                         {
-                            { "flex", new List<object> { "1", "auto", "initial", "none", "isArbitraryValue" } } // Use actual variable or method
+                            { "flex", new List<object> { "1", "auto", "initial", "none", isArbitraryValue } } // Use actual variable or method
                         }
                     }
                 },
@@ -596,7 +598,7 @@ namespace TailwindMerge
                     {
                         new Dictionary<string, List<object>>
                         {
-                            { "grow", new List<object> { "getZeroAndEmpty()" } } // Use actual function call
+                            { "grow", new List<object> { zeroAndEmpty } } // Use actual function call
                         }
                     }
                 },
@@ -606,7 +608,7 @@ namespace TailwindMerge
                     {
                         new Dictionary<string, List<object>>
                         {
-                            { "shrink", new List<object> { "getZeroAndEmpty()" } } // Use actual function call
+                            { "shrink", new List<object> { zeroAndEmpty } } // Use actual function call
                         }
                     }
                 },
@@ -616,7 +618,7 @@ namespace TailwindMerge
                     {
                         new Dictionary<string, List<object>>
                         {
-                            { "order", new List<object> { "first", "last", "none", "isInteger", "isArbitraryValue" } } // Use actual variables or methods
+                            { "order", new List<object> { "first", "last", "none", isInteger, isArbitraryValue } } // Use actual variables or methods
                         }
                     }
                 },
@@ -626,7 +628,7 @@ namespace TailwindMerge
                     {
                         new Dictionary<string, List<object>>
                         {
-                            { "grid-cols", new List<object> { "isAny" } } // Adjust with actual variable or method
+                            { "grid-cols", new List<object> { isAny } } // Adjust with actual variable or method
                         }
                     }
                 },
@@ -640,8 +642,8 @@ namespace TailwindMerge
                                 "col", new List<object>
                                 {
                                     "auto",
-                                    new Dictionary<string, object> { { "span", new List<object> { "full", "isInteger", "isArbitraryValue" } } },
-                                    "isArbitraryValue"
+                                    new Dictionary<string, object> { { "span", new List<object> { "full", isInteger, isArbitraryValue } } },
+                                    isArbitraryValue
                                 }
                             }
                         }
@@ -653,7 +655,7 @@ namespace TailwindMerge
                     {
                         new Dictionary<string, List<object>>
                         {
-                            { "col-start", new List<object> { "getNumberWithAutoAndArbitrary()" } } // Use actual function call
+                            { "col-start", new List<object> { numberWithAutoAndArbitrary } } // Use actual function call
                         }
                     }
                 },
@@ -663,7 +665,7 @@ namespace TailwindMerge
                     {
                         new Dictionary<string, List<object>>
                         {
-                            { "col-end", new List<object> { "getNumberWithAutoAndArbitrary()" } } // Use actual function call
+                            { "col-end", new List<object> { numberWithAutoAndArbitrary } } // Use actual function call
                         }
                     }
                 },
@@ -674,7 +676,7 @@ namespace TailwindMerge
                     {
                         new Dictionary<string, List<object>>
                         {
-                            { "grid-rows", new List<object> { "isAny" } } // Use actual variable or method
+                            { "grid-rows", new List<object> { isAny } } // Use actual variable or method
                         }
                     }
                 },
@@ -688,8 +690,8 @@ namespace TailwindMerge
                                 "row", new List<object>
                                 {
                                     "auto",
-                                    new Dictionary<string, object> { { "span", new List<object> { "isInteger", "isArbitraryValue" } } },
-                                    "isArbitraryValue"
+                                    new Dictionary<string, object> { { "span", new List<object> { isInteger, isArbitraryValue } } },
+                                    isArbitraryValue
                                 }
                             }
                         }
@@ -701,7 +703,7 @@ namespace TailwindMerge
                     {
                         new Dictionary<string, List<object>>
                         {
-                            { "row-start", new List<object> { "getNumberWithAutoAndArbitrary()" } } // Use actual function call
+                            { "row-start", new List<object> { numberWithAutoAndArbitrary } } // Use actual function call
                         }
                     }
                 },
@@ -711,7 +713,7 @@ namespace TailwindMerge
                     {
                         new Dictionary<string, List<object>>
                         {
-                            { "row-end", new List<object> { "getNumberWithAutoAndArbitrary()" } } // Use actual function call
+                            { "row-end", new List<object> { numberWithAutoAndArbitrary } } // Use actual function call
                         }
                     }
                 },
@@ -731,7 +733,7 @@ namespace TailwindMerge
                     {
                         new Dictionary<string, List<object>>
                         {
-                            { "auto-cols", new List<object> { "auto", "min", "max", "fr", "isArbitraryValue" } } // Use actual variable or method
+                            { "auto-cols", new List<object> { "auto", "min", "max", "fr", isArbitraryValue } } // Use actual variable or method
                         }
                     }
                 },
@@ -741,7 +743,7 @@ namespace TailwindMerge
                     {
                         new Dictionary<string, List<object>>
                         {
-                            { "auto-rows", new List<object> { "auto", "min", "max", "fr", "isArbitraryValue" } } // Use actual variable or method
+                            { "auto-rows", new List<object> { "auto", "min", "max", "fr", isArbitraryValue } } // Use actual variable or method
                         }
                     }
                 },
@@ -751,7 +753,7 @@ namespace TailwindMerge
                     {
                         new Dictionary<string, List<object>>
                         {
-                            { "gap", new List<object> { "gap" } } // Assuming "gap" is a variable or method to be replaced
+                            { "gap", new List<object> { gap } } // Assuming gap is a variable or method to be replaced
                         }
                     }
                 },
@@ -761,7 +763,7 @@ namespace TailwindMerge
                     {
                         new Dictionary<string, List<object>>
                         {
-                            { "gap-x", new List<object> { "gap" } } // Adjust with actual variable or method
+                            { "gap-x", new List<object> { gap } } // Adjust with actual variable or method
                         }
                     }
                 },
@@ -771,7 +773,7 @@ namespace TailwindMerge
                     {
                         new Dictionary<string, List<object>>
                         {
-                            { "gap-y", new List<object> { "gap" } } // Adjust with actual variable or method
+                            { "gap-y", new List<object> { gap } } // Adjust with actual variable or method
                         }
                     }
                 },
@@ -781,7 +783,7 @@ namespace TailwindMerge
                     {
                         new Dictionary<string, List<object>>
                         {
-                            { "justify", new List<object> { "normal", "getAlign()" } } // Use actual function call or replace "getAlign()" with real values
+                            { "justify", new List<object> { "normal", align } } // Use actual function call or replace align with real values
                         }
                     }
                 },
@@ -812,7 +814,7 @@ namespace TailwindMerge
                     {
                         new Dictionary<string, List<object>>
                         {
-                            { "content", new List<object> { "normal", "getAlign()", "baseline" } } // Use actual function call or replace "getAlign()" with real values
+                            { "content", new List<object> { "normal", align, "baseline" } } // Use actual function call or replace align with real values
                         }
                     }
                 },
@@ -842,7 +844,7 @@ namespace TailwindMerge
                     {
                         new Dictionary<string, List<object>>
                         {
-                            { "place-content", new List<object> { "getAlign()", "baseline" } } // Use actual function call or replace "getAlign()" with real values
+                            { "place-content", new List<object> { align, "baseline" } } // Use actual function call or replace align with real values
                         }
                     }
                 },
@@ -872,7 +874,7 @@ namespace TailwindMerge
                     {
                         new Dictionary<string, List<object>>
                         {
-                            { "p", new List<object> { "padding" } } // Assuming "padding" is a variable or method to be replaced
+                            { "p", new List<object> { padding } } // Assuming padding is a variable or method to be replaced
                         }
                     }
                 },
@@ -882,7 +884,7 @@ namespace TailwindMerge
                     {
                         new Dictionary<string, List<object>>
                         {
-                            { "px", new List<object> { "padding" } } // Adjust with actual variable or method
+                            { "px", new List<object> { padding } } // Adjust with actual variable or method
                         }
                     }
                 },
@@ -892,7 +894,7 @@ namespace TailwindMerge
                     {
                         new Dictionary<string, List<object>>
                         {
-                            { "py", new List<object> { "padding" } } // Adjust with actual variable or method
+                            { "py", new List<object> { padding } } // Adjust with actual variable or method
                         }
                     }
                 },
@@ -903,7 +905,7 @@ namespace TailwindMerge
                     {
                         new Dictionary<string, List<object>>
                         {
-                            { "ps", new List<object> { "padding" } } // Adjust with actual variable or method
+                            { "ps", new List<object> { padding } } // Adjust with actual variable or method
                         }
                     }
                 },
@@ -913,7 +915,7 @@ namespace TailwindMerge
                     {
                         new Dictionary<string, List<object>>
                         {
-                            { "pe", new List<object> { "padding" } } // Adjust with actual variable or method
+                            { "pe", new List<object> { padding } } // Adjust with actual variable or method
                         }
                     }
                 },
@@ -923,7 +925,7 @@ namespace TailwindMerge
                     {
                         new Dictionary<string, List<object>>
                         {
-                            { "pt", new List<object> { "padding" } } // Adjust with actual variable or method
+                            { "pt", new List<object> { padding } } // Adjust with actual variable or method
                         }
                     }
                 },
@@ -933,7 +935,7 @@ namespace TailwindMerge
                     {
                         new Dictionary<string, List<object>>
                         {
-                            { "pr", new List<object> { "padding" } } // Adjust with actual variable or method
+                            { "pr", new List<object> { padding } } // Adjust with actual variable or method
                         }
                     }
                 },
@@ -943,7 +945,7 @@ namespace TailwindMerge
                     {
                         new Dictionary<string, List<object>>
                         {
-                            { "pb", new List<object> { "padding" } } // Adjust with actual variable or method
+                            { "pb", new List<object> { padding } } // Adjust with actual variable or method
                         }
                     }
                 },
@@ -953,7 +955,7 @@ namespace TailwindMerge
                     {
                         new Dictionary<string, List<object>>
                         {
-                            { "pl", new List<object> { "padding" } } // Adjust with actual variable or method
+                            { "pl", new List<object> { padding } } // Adjust with actual variable or method
                         }
                     }
                 },
@@ -963,7 +965,7 @@ namespace TailwindMerge
                     {
                         new Dictionary<string, List<object>>
                         {
-                            { "m", new List<object> { "margin" } } // Assuming "margin" is a variable or method to be replaced
+                            { "m", new List<object> { margin } } // Assuming margin is a variable or method to be replaced
                         }
                     }
                 },
@@ -973,7 +975,7 @@ namespace TailwindMerge
                     {
                         new Dictionary<string, List<object>>
                         {
-                            { "mx", new List<object> { "margin" } } // Adjust with actual variable or method
+                            { "mx", new List<object> { margin } } // Adjust with actual variable or method
                         }
                     }
                 },
@@ -983,7 +985,7 @@ namespace TailwindMerge
                     {
                         new Dictionary<string, List<object>>
                         {
-                            { "my", new List<object> { "margin" } } // Adjust with actual variable or method
+                            { "my", new List<object> { margin } } // Adjust with actual variable or method
                         }
                     }
                 },
@@ -993,7 +995,7 @@ namespace TailwindMerge
                     {
                         new Dictionary<string, List<object>>
                         {
-                            { "ms", new List<object> { "margin" } } // Adjust with actual variable or method
+                            { "ms", new List<object> { margin } } // Adjust with actual variable or method
                         }
                     }
                 },
@@ -1003,7 +1005,7 @@ namespace TailwindMerge
                     {
                         new Dictionary<string, List<object>>
                         {
-                            { "me", new List<object> { "margin" } } // Adjust with actual variable or method
+                            { "me", new List<object> { margin } } // Adjust with actual variable or method
                         }
                     }
                 },
@@ -1014,7 +1016,7 @@ namespace TailwindMerge
                     {
                         new Dictionary<string, List<object>>
                         {
-                            { "mt", new List<object> { "margin" } } // Adjust with actual variable or method
+                            { "mt", new List<object> { margin } } // Adjust with actual variable or method
                         }
                     }
                 },
@@ -1024,7 +1026,7 @@ namespace TailwindMerge
                     {
                         new Dictionary<string, List<object>>
                         {
-                            { "mr", new List<object> { "margin" } } // Adjust with actual variable or method
+                            { "mr", new List<object> { margin } } // Adjust with actual variable or method
                         }
                     }
                 },
@@ -1034,7 +1036,7 @@ namespace TailwindMerge
                     {
                         new Dictionary<string, List<object>>
                         {
-                            { "mb", new List<object> { "margin" } } // Adjust with actual variable or method
+                            { "mb", new List<object> { margin } } // Adjust with actual variable or method
                         }
                     }
                 },
@@ -1044,7 +1046,7 @@ namespace TailwindMerge
                     {
                         new Dictionary<string, List<object>>
                         {
-                            { "ml", new List<object> { "margin" } } // Adjust with actual variable or method
+                            { "ml", new List<object> { margin } } // Adjust with actual variable or method
                         }
                     }
                 },
@@ -1054,7 +1056,7 @@ namespace TailwindMerge
                     {
                         new Dictionary<string, List<object>>
                         {
-                            { "space-x", new List<object> { "space" } } // Assuming "space" is a variable or method to be replaced
+                            { "space-x", new List<object> { space } } // Assuming space is a variable or method to be replaced
                         }
                     }
                 },
@@ -1068,14 +1070,14 @@ namespace TailwindMerge
                     {
                         new Dictionary<string, List<object>>
                         {
-                            { "space-y", new List<object> { "space" } } // Adjust with actual variable or method
+                            { "space-y", new List<object> { space } } // Adjust with actual variable or method
                         }
                     }
                 },
-                {
-                    "space-y-reverse",
-                    new List<object> { "space-y-reverse" }
-                },
+                //{
+                //    "space-y-reverse",
+                //    new List<object> { "space-y-reverse" }
+                //},
                 {
                     "w",
                     new List<object>
@@ -1085,9 +1087,9 @@ namespace TailwindMerge
                             {
                                 "w", new List<object>
                                 {
-                                    "auto", "min", "max", "fit", "svw", "lvw", "dvw", "isArbitraryValue", "spacing"
+                                    "auto", "min", "max", "fit", "svw", "lvw", "dvw", isArbitraryValue, "spacing"
                                 }
-                            } // Adjust with actual variable, method, or replace "spacing" and "isArbitraryValue" with real values
+                            } // Adjust with actual variable, method, or replace "spacing" and isArbitraryValue with real values
                         }
                     }
                 },
@@ -1100,7 +1102,7 @@ namespace TailwindMerge
                             {
                                 "min-w", new List<object>
                                 {
-                                    "isArbitraryValue", "spacing", "min", "max", "fit"
+                                    isArbitraryValue, "spacing", "min", "max", "fit"
                                 }
                             } // Adjust with actual variable or method
                         }
@@ -1115,7 +1117,7 @@ namespace TailwindMerge
                             {
                                 "max-w", new List<object>
                                 {
-                                    "isArbitraryValue",
+                                    isArbitraryValue,
                                     "spacing",
                                     "none",
                                     "full",
@@ -1125,11 +1127,11 @@ namespace TailwindMerge
                                     "prose",
                                     new Dictionary<string, object>
                                     {
-                                        { "screen", new List<object> { "isTshirtSize" } }
+                                        { "screen", new List<object> { isTshirtSize } }
                                     },
-                                    "isTshirtSize"
+                                    isTshirtSize
                                 }
-                            } // Adjust with actual variables, methods, or replace "isTshirtSize" with real values
+                            } // Adjust with actual variables, methods, or replace isTshirtSize with real values
                         }
                     }
                 },
@@ -1143,7 +1145,7 @@ namespace TailwindMerge
                             {
                                 "h", new List<object>
                                 {
-                                    "isArbitraryValue", "spacing", "auto", "min", "max", "fit", "svh", "lvh", "dvh"
+                                    isArbitraryValue, "spacing", "auto", "min", "max", "fit", "svh", "lvh", "dvh"
                                 }
                             } // Adjust with actual variable or method
                         }
@@ -1158,7 +1160,7 @@ namespace TailwindMerge
                             {
                                 "min-h", new List<object>
                                 {
-                                    "isArbitraryValue", "spacing", "min", "max", "fit", "svh", "lvh", "dvh"
+                                    isArbitraryValue, "spacing", "min", "max", "fit", "svh", "lvh", "dvh"
                                 }
                             } // Adjust with actual variable or method
                         }
@@ -1173,7 +1175,7 @@ namespace TailwindMerge
                             {
                                 "max-h", new List<object>
                                 {
-                                    "isArbitraryValue", "spacing", "min", "max", "fit", "svh", "lvh", "dvh"
+                                    isArbitraryValue, "spacing", "min", "max", "fit", "svh", "lvh", "dvh"
                                 }
                             } // Adjust with actual variable or method
                         }
@@ -1188,7 +1190,7 @@ namespace TailwindMerge
                             {
                                 "size", new List<object>
                                 {
-                                    "isArbitraryValue", "spacing", "auto", "min", "max", "fit"
+                                    isArbitraryValue, "spacing", "auto", "min", "max", "fit"
                                 }
                             } // Adjust with actual variable or method
                         }
@@ -1203,20 +1205,20 @@ namespace TailwindMerge
                             {
                                 "text", new List<object>
                                 {
-                                    "base", "isTshirtSize", "isArbitraryLength"
+                                    "base", isTshirtSize, isArbitraryLength
                                 }
                             } // Use actual variables or methods
                         }
                     }
                 },
-                {
-                    "font-smoothing",
-                    new List<object> { "antialiased", "subpixel-antialiased" }
-                },
-                {
-                    "font-style",
-                    new List<object> { "italic", "not-italic" }
-                },
+                //{
+                //    "font-smoothing",
+                //    new List<object> { "antialiased", "subpixel-antialiased" }
+                //},
+                //{
+                //    "font-style",
+                //    new List<object> { "italic", "not-italic" }
+                //},
                 {
                     "font-weight",
                     new List<object>
@@ -1226,7 +1228,7 @@ namespace TailwindMerge
                             {
                                 "font", new List<object>
                                 {
-                                    "thin", "extralight", "light", "normal", "medium", "semibold", "bold", "extrabold", "black", "isArbitraryNumber"
+                                    "thin", "extralight", "light", "normal", "medium", "semibold", "bold", "extrabold", "black", isArbitraryNumber
                                 }
                             } // Use actual variable or method
                         }
@@ -1238,36 +1240,36 @@ namespace TailwindMerge
                     {
                         new Dictionary<string, List<object>>
                         {
-                            { "font", new List<object> { "isAny" } } // Adjust with actual variable or method
+                            { "font", new List<object> { isAny } } // Adjust with actual variable or method
                         }
                     }
                 },
-                {
-                    "fvn-normal",
-                    new List<object> { "normal-nums" }
-                },
-                {
-                    "fvn-ordinal",
-                    new List<object> { "ordinal" }
-                },
+                //{
+                //    "fvn-normal",
+                //    new List<object> { "normal-nums" }
+                //},
+                //{
+                //    "fvn-ordinal",
+                //    new List<object> { "ordinal" }
+                //},
 
 
-                {
-                    "fvn-slashed-zero",
-                    new List<object> { "slashed-zero" }
-                },
-                {
-                    "fvn-figure",
-                    new List<object> { "lining-nums", "oldstyle-nums" }
-                },
-                {
-                    "fvn-spacing",
-                    new List<object> { "proportional-nums", "tabular-nums" }
-                },
-                {
-                    "fvn-fraction",
-                    new List<object> { "diagonal-fractions", "stacked-fractions" }
-                },
+                //{
+                //    "fvn-slashed-zero",
+                //    new List<object> { "slashed-zero" }
+                //},
+                //{
+                //    "fvn-figure",
+                //    new List<object> { "lining-nums", "oldstyle-nums" }
+                //},
+                //{
+                //    "fvn-spacing",
+                //    new List<object> { "proportional-nums", "tabular-nums" }
+                //},
+                //{
+                //    "fvn-fraction",
+                //    new List<object> { "diagonal-fractions", "stacked-fractions" }
+                //},
                 {
                     "tracking",
                     new List<object>
@@ -1277,7 +1279,7 @@ namespace TailwindMerge
                             {
                                 "tracking", new List<object>
                                 {
-                                    "tighter", "tight", "normal", "wide", "wider", "widest", "isArbitraryValue"
+                                    "tighter", "tight", "normal", "wide", "wider", "widest", isArbitraryValue
                                 }
                             } // Use actual variable or method
                         }
@@ -1292,7 +1294,7 @@ namespace TailwindMerge
                             {
                                 "line-clamp", new List<object>
                                 {
-                                    "none", "isNumber", "isArbitraryNumber"
+                                    "none", isNumber, isArbitraryNumber
                                 }
                             } // Use actual variable or method
                         }
@@ -1307,7 +1309,7 @@ namespace TailwindMerge
                             {
                                 "leading", new List<object>
                                 {
-                                    "none", "tight", "snug", "normal", "relaxed", "loose", "isLength", "isArbitraryValue"
+                                    "none", "tight", "snug", "normal", "relaxed", "loose", isLength, isArbitraryValue
                                 }
                             } // Use actual variable or method
                         }
@@ -1319,7 +1321,7 @@ namespace TailwindMerge
                     {
                         new Dictionary<string, List<object>>
                         {
-                            { "list-image", new List<object> { "none", "isArbitraryValue" } } // Use actual variable or method
+                            { "list-image", new List<object> { "none", isArbitraryValue } } // Use actual variable or method
                         }
                     }
                 },
@@ -1329,7 +1331,7 @@ namespace TailwindMerge
                     {
                         new Dictionary<string, List<object>>
                         {
-                            { "list", new List<object> { "none", "disc", "decimal", "isArbitraryValue" } } // Use actual variable or method
+                            { "list", new List<object> { "none", "disc", "decimal", isArbitraryValue } } // Use actual variable or method
                         }
                     }
                 },
@@ -1351,7 +1353,7 @@ namespace TailwindMerge
                     {
                         new Dictionary<string, List<object>>
                         {
-                            { "placeholder", new List<object> { "colors" } } // Assuming "colors" is a method or variable to be replaced
+                            { "placeholder", new List<object> { colors } } // Assuming colors is a method or variable to be replaced
                         }
                     }
                 },
@@ -1361,7 +1363,7 @@ namespace TailwindMerge
                     {
                         new Dictionary<string, List<object>>
                         {
-                            { "placeholder-opacity", new List<object> { "opacity" } } // Assuming "opacity" is a method or variable to be replaced
+                            { "placeholder-opacity", new List<object> {opacity } } // Assumingopacity is a method or variable to be replaced
                         }
                     }
                 },
@@ -1381,7 +1383,7 @@ namespace TailwindMerge
                     {
                         new Dictionary<string, List<object>>
                         {
-                            { "text", new List<object> { "colors" } } // Assuming "colors" is a method or variable to be replaced
+                            { "text", new List<object> { colors } } // Assuming colors is a method or variable to be replaced
                         }
                     }
                 },
@@ -1391,7 +1393,7 @@ namespace TailwindMerge
                     {
                         new Dictionary<string, List<object>>
                         {
-                            { "text-opacity", new List<object> { "opacity" } } // Assuming "opacity" is a method or variable to be replaced
+                            { "text-opacity", new List<object> {opacity } } // Assumingopacity is a method or variable to be replaced
                         }
                     }
                 },
@@ -1415,7 +1417,7 @@ namespace TailwindMerge
                     {
                         new Dictionary<string, List<object>>
                         {
-                            { "decoration", new List<object> { "auto", "from-font", "isLength", "isArbitraryLength" } } // Use actual variables or methods
+                            { "decoration", new List<object> { "auto", "from-font", isLength, isArbitraryLength } } // Use actual variables or methods
                         }
                     }
                 },
@@ -1425,7 +1427,7 @@ namespace TailwindMerge
                     {
                         new Dictionary<string, List<object>>
                         {
-                            { "underline-offset", new List<object> { "auto", "isLength", "isArbitraryValue" } } // Use actual variables or methods
+                            { "underline-offset", new List<object> { "auto", isLength, isArbitraryValue } } // Use actual variables or methods
                         }
                     }
                 },
@@ -1435,20 +1437,20 @@ namespace TailwindMerge
                     {
                         new Dictionary<string, List<object>>
                         {
-                            { "decoration", new List<object> { "colors" } } // Assuming "colors" is a method or variable to be replaced
+                            { "decoration", new List<object> { colors } } // Assuming colors is a method or variable to be replaced
                         }
                     }
                 },
 
 
-                {
-                    "text-transform",
-                    new List<object> { "uppercase", "lowercase", "capitalize", "normal-case" }
-                },
-                {
-                    "text-overflow",
-                    new List<object> { "truncate", "text-ellipsis", "text-clip" }
-                },
+                //{
+                //    "text-transform",
+                //    new List<object> { "uppercase", "lowercase", "capitalize", "normal-case" }
+                //},
+                //{
+                //    "text-overflow",
+                //    new List<object> { "truncate", "text-ellipsis", "text-clip" }
+                //},
                 {
                     "text-wrap",
                     new List<object>
@@ -1465,7 +1467,7 @@ namespace TailwindMerge
                     {
                         new Dictionary<string, List<object>>
                         {
-                            { "indent", new List<object> { "getSpacingWithArbitrary()" } } // Use actual function call
+                            { "indent", new List<object> { spacingWithArbitrary } } // Use actual function call
                         }
                     }
                 },
@@ -1478,7 +1480,7 @@ namespace TailwindMerge
                             {
                                 "align", new List<object>
                                 {
-                                    "baseline", "top", "middle", "bottom", "text-top", "text-bottom", "sub", "super", "isArbitraryValue"
+                                    "baseline", "top", "middle", "bottom", "text-top", "text-bottom", "sub", "super", isArbitraryValue
                                 }
                             }
                         }
@@ -1525,7 +1527,7 @@ namespace TailwindMerge
                     {
                         new Dictionary<string, List<object>>
                         {
-                            { "content", new List<object> { "none", "isArbitraryValue" } } // Use actual variable or method
+                            { "content", new List<object> { "none", isArbitraryValue } } // Use actual variable or method
                         }
                     }
                 },
@@ -1547,7 +1549,7 @@ namespace TailwindMerge
                     {
                         new Dictionary<string, List<object>>
                         {
-                            { "bg-clip", new List<object> { "border", "padding", "content", "text" } }
+                            { "bg-clip", new List<object> { "border", padding, "content", "text" } }
                         }
                     }
                 },
@@ -1557,7 +1559,7 @@ namespace TailwindMerge
                     {
                         new Dictionary<string, List<object>>
                         {
-                            { "bg-opacity", new List<object> { "opacity" } } // Assuming "opacity" is a method or variable to be replaced
+                            { "bg-opacity", new List<object> {opacity } } // Assumingopacity is a method or variable to be replaced
                         }
                     }
                 },
@@ -1567,7 +1569,7 @@ namespace TailwindMerge
                     {
                         new Dictionary<string, List<object>>
                         {
-                            { "bg-origin", new List<object> { "border", "padding", "content" } }
+                            { "bg-origin", new List<object> { "border", padding, "content" } }
                         }
                     }
                 },
@@ -1591,7 +1593,7 @@ namespace TailwindMerge
                                 "bg", new List<object>
                                 {
                                     "no-repeat",
-                                    new Dictionary<string, object> { { "repeat", new List<object> { "", "x", "y", "round", "space" } } }
+                                    new Dictionary<string, object> { { "repeat", new List<object> { "", "x", "y", "round", space } } }
                                 }
                             }
                         }
@@ -1630,7 +1632,7 @@ namespace TailwindMerge
                     {
                         new Dictionary<string, List<object>>
                         {
-                            { "bg", new List<object> { "colors" } } // Assuming "colors" is a method or variable to be replaced
+                            { "bg", new List<object> { colors } } // Assuming colors is a method or variable to be replaced
                         }
                     }
                 },
@@ -1946,7 +1948,7 @@ namespace TailwindMerge
                     {
                         new Dictionary<string, List<object>>
                         {
-                            { "border-opacity", new List<object> { "opacity" } } // Assuming "opacity" is a variable or method
+                            { "border-opacity", new List<object> {opacity } } // Assumingopacity is a variable or method
                         }
                     }
                 },
@@ -1994,7 +1996,7 @@ namespace TailwindMerge
                     {
                         new Dictionary<string, List<object>>
                         {
-                            { "divide-opacity", new List<object> { "opacity" } } // Assuming "opacity" is a variable or method
+                            { "divide-opacity", new List<object> {opacity } } // Assumingopacity is a variable or method
                         }
                     }
                 },
@@ -2014,7 +2016,7 @@ namespace TailwindMerge
                     {
                         new Dictionary<string, List<object>>
                         {
-                            { "border", new List<object> { "colors" } } // Assuming "colors" is a method or variable
+                            { "border", new List<object> { colors } } // Assuming colors is a method or variable
                         }
                     }
                 },
@@ -2024,7 +2026,7 @@ namespace TailwindMerge
                     {
                         new Dictionary<string, List<object>>
                         {
-                            { "border-x", new List<object> { "colors" } } // Assuming "colors" is a method or variable
+                            { "border-x", new List<object> { colors } } // Assuming colors is a method or variable
                         }
                     }
                 },
@@ -2036,7 +2038,7 @@ namespace TailwindMerge
                     {
                         new Dictionary<string, List<object>>
                         {
-                            { "border-y", new List<object> { "colors" } } // Assuming "colors" is a method or variable to be replaced
+                            { "border-y", new List<object> { colors } } // Assuming colors is a method or variable to be replaced
                         }
                     }
                 },
@@ -2046,7 +2048,7 @@ namespace TailwindMerge
                     {
                         new Dictionary<string, List<object>>
                         {
-                            { "border-t", new List<object> { "colors" } } // Assuming "colors" is a method or variable to be replaced
+                            { "border-t", new List<object> { colors } } // Assuming colors is a method or variable to be replaced
                         }
                     }
                 },
@@ -2056,7 +2058,7 @@ namespace TailwindMerge
                     {
                         new Dictionary<string, List<object>>
                         {
-                            { "border-r", new List<object> { "colors" } } // Assuming "colors" is a method or variable to be replaced
+                            { "border-r", new List<object> { colors } } // Assuming colors is a method or variable to be replaced
                         }
                     }
                 },
@@ -2066,7 +2068,7 @@ namespace TailwindMerge
                     {
                         new Dictionary<string, List<object>>
                         {
-                            { "border-b", new List<object> { "colors" } } // Assuming "colors" is a method or variable to be replaced
+                            { "border-b", new List<object> { colors } } // Assuming colors is a method or variable to be replaced
                         }
                     }
                 },
@@ -2076,7 +2078,7 @@ namespace TailwindMerge
                     {
                         new Dictionary<string, List<object>>
                         {
-                            { "border-l", new List<object> { "colors" } } // Assuming "colors" is a method or variable to be replaced
+                            { "border-l", new List<object> { colors } } // Assuming colors is a method or variable to be replaced
                         }
                     }
                 },
@@ -2086,7 +2088,7 @@ namespace TailwindMerge
                     {
                         new Dictionary<string, List<object>>
                         {
-                            { "divide", new List<object> { "colors" } } // Assuming "colors" is a method or variable to be replaced
+                            { "divide", new List<object> { colors } } // Assuming colors is a method or variable to be replaced
                         }
                     }
                 },
@@ -2106,7 +2108,7 @@ namespace TailwindMerge
                     {
                         new Dictionary<string, List<object>>
                         {
-                            { "outline-offset", new List<object> { "isLength", "isArbitraryValue" } } // Use actual variables or methods
+                            { "outline-offset", new List<object> { isLength, isArbitraryValue } } // Use actual variables or methods
                         }
                     }
                 },
@@ -2116,7 +2118,7 @@ namespace TailwindMerge
                     {
                         new Dictionary<string, List<object>>
                         {
-                            { "outline", new List<object> { "isLength", "isArbitraryLength" } } // Use actual variables or methods
+                            { "outline", new List<object> { isLength, isArbitraryLength } } // Use actual variables or methods
                         }
                     }
                 },
@@ -2126,7 +2128,7 @@ namespace TailwindMerge
                     {
                         new Dictionary<string, List<object>>
                         {
-                            { "outline", new List<object> { "colors" } } // Assuming "colors" is a method or variable to be replaced
+                            { "outline", new List<object> { colors } } // Assuming colors is a method or variable to be replaced
                         }
                     }
                 },
@@ -2152,7 +2154,7 @@ namespace TailwindMerge
                     {
                         new Dictionary<string, List<object>>
                         {
-                            { "ring", new List<object> { "colors" } } // Assuming "colors" is a method or variable to be replaced
+                            { "ring", new List<object> { colors } } // Assuming colors is a method or variable to be replaced
                         }
                     }
                 },
@@ -2162,7 +2164,7 @@ namespace TailwindMerge
                     {
                         new Dictionary<string, List<object>>
                         {
-                            { "ring-opacity", new List<object> { "opacity" } } // Assuming "opacity" is a method or variable to be replaced
+                            { "ring-opacity", new List<object> {opacity } } // Assumingopacity is a method or variable to be replaced
                         }
                     }
                 },
@@ -2172,7 +2174,7 @@ namespace TailwindMerge
                     {
                         new Dictionary<string, List<object>>
                         {
-                            { "ring-offset", new List<object> { "isLength", "isArbitraryLength" } } // Use actual variables or methods
+                            { "ring-offset", new List<object> { isLength, isArbitraryLength } } // Use actual variables or methods
                         }
                     }
                 },
@@ -2182,7 +2184,7 @@ namespace TailwindMerge
                     {
                         new Dictionary<string, List<object>>
                         {
-                            { "ring-offset", new List<object> { "colors" } } // Assuming "colors" is a method or variable to be replaced
+                            { "ring-offset", new List<object> { colors } } // Assuming colors is a method or variable to be replaced
                         }
                     }
                 },
@@ -2192,7 +2194,7 @@ namespace TailwindMerge
                     {
                         new Dictionary<string, List<object>>
                         {
-                            { "shadow", new List<object> { "", "inner", "none", "isTshirtSize", "isArbitraryShadow" } } // Use actual variables or methods
+                            { "shadow", new List<object> { "", "inner", "none", isTshirtSize, isArbitraryShadow } } // Use actual variables or methods
                         }
                     }
                 },
@@ -2202,7 +2204,7 @@ namespace TailwindMerge
                     {
                         new Dictionary<string, List<object>>
                         {
-                            { "shadow", new List<object> { "isAny" } } // Adjust with actual variable or method
+                            { "shadow", new List<object> { isAny } } // Adjust with actual variable or method
                         }
                     }
                 },
@@ -2212,7 +2214,7 @@ namespace TailwindMerge
                     {
                         new Dictionary<string, List<object>>
                         {
-                            { "opacity", new List<object> { "opacity" } } // Assuming "opacity" is a variable or method to be replaced
+                            { "opacity", new List<object> {opacity } } // Assumingopacity is a variable or method to be replaced
                         }
                     }
                 },
@@ -2222,7 +2224,7 @@ namespace TailwindMerge
                     {
                         new Dictionary<string, List<object>>
                         {
-                            { "mix-blend", new List<object> { "getBlendModes()" } } // Use actual function call or replace with real values
+                            { "mix-blend", new List<object> { blendModes } } // Use actual function call or replace with real values
                         }
                     }
                 },
@@ -2234,7 +2236,7 @@ namespace TailwindMerge
                     {
                         new Dictionary<string, List<object>>
                         {
-                            { "bg-blend", new List<object> { "getBlendModes()" } } // Use actual function call or replace with real values
+                            { "bg-blend", new List<object> { blendModes } } // Use actual function call or replace with real values
                         }
                     }
                 },
@@ -2284,7 +2286,7 @@ namespace TailwindMerge
                     {
                         new Dictionary<string, List<object>>
                         {
-                            { "drop-shadow", new List<object> { "", "none", "isTshirtSize", "isArbitraryValue" } } // Use actual variables or methods
+                            { "drop-shadow", new List<object> { "", "none", isTshirtSize, isArbitraryValue } } // Use actual variables or methods
                         }
                     }
                 },
@@ -2416,7 +2418,7 @@ namespace TailwindMerge
                     {
                         new Dictionary<string, List<object>>
                         {
-                            { "backdrop-opacity", new List<object> { "opacity" } } // Assuming "opacity" is a method or variable to be replaced
+                            { "backdrop-opacity", new List<object> { opacity } } // Assumingopacity is a method or variable to be replaced
                         }
                     }
                 },
@@ -2512,7 +2514,7 @@ namespace TailwindMerge
                             {
                                 "transition", new List<object>
                                 {
-                                    "none", "all", "", "colors", "opacity", "shadow", "transform", "isArbitraryValue"
+                                    "none", "all", "", colors,opacity, "shadow", "transform", isArbitraryValue
                                 }
                             }
                         }
@@ -2534,7 +2536,7 @@ namespace TailwindMerge
                     {
                         new Dictionary<string, List<object>>
                         {
-                            { "ease", new List<object> { "linear", "in", "out", "in-out", "isArbitraryValue" } } // Use actual variables or methods
+                            { "ease", new List<object> { "linear", "in", "out", "in-out", isArbitraryValue } } // Use actual variables or methods
                         }
                     }
                 },
@@ -2556,7 +2558,7 @@ namespace TailwindMerge
                     {
                         new Dictionary<string, List<object>>
                         {
-                            { "animate", new List<object> { "none", "spin", "ping", "pulse", "bounce", "isArbitraryValue" } } // Use actual variables or methods
+                            { "animate", new List<object> { "none", "spin", "ping", "pulse", "bounce", isArbitraryValue } } // Use actual variables or methods
                         }
                     }
                 },
@@ -2606,7 +2608,7 @@ namespace TailwindMerge
                     {
                         new Dictionary<string, List<object>>
                         {
-                            { "rotate", new List<object> { "isInteger", "isArbitraryValue" } } // Use actual variables or methods
+                            { "rotate", new List<object> { isInteger, isArbitraryValue } } // Use actual variables or methods
                         }
                     }
                 },
@@ -2616,7 +2618,7 @@ namespace TailwindMerge
                     {
                         new Dictionary<string, List<object>>
                         {
-                            { "translate-x", new List<object> { "translate" } } // Assuming "translate" is a variable or method to be replaced
+                            { "translate-x", new List<object> { translate } } // Assuming "translate" is a variable or method to be replaced
                         }
                     }
                 },
@@ -2626,7 +2628,7 @@ namespace TailwindMerge
                     {
                         new Dictionary<string, List<object>>
                         {
-                            { "translate-y", new List<object> { "translate" } } // Adjust with actual variable or method
+                            { "translate-y", new List<object> { translate } } // Adjust with actual variable or method
                         }
                     }
                 },
@@ -2649,7 +2651,7 @@ namespace TailwindMerge
                     {
                         new Dictionary<string, List<object>>
                         {
-                            { "skew-y", new List<object> { "skew" } } // Assuming "skew" is a variable or method to be replaced
+                            { "skew-y", new List<object> { skew } } // Assuming "skew" is a variable or method to be replaced
                         }
                     }
                 },
@@ -2663,7 +2665,7 @@ namespace TailwindMerge
                                 "origin", new List<object>
                                 {
                                     "center", "top", "top-right", "right", "bottom-right",
-                                    "bottom", "bottom-left", "left", "top-left", "isArbitraryValue"
+                                    "bottom", "bottom-left", "left", "top-left", isArbitraryValue
                                 }
                             }
                         }
@@ -2675,7 +2677,7 @@ namespace TailwindMerge
                     {
                         new Dictionary<string, List<object>>
                         {
-                            { "accent", new List<object> { "auto", "colors" } } // Assuming "colors" is a method or variable to be replaced
+                            { "accent", new List<object> { "auto", colors } } // Assuming colors is a method or variable to be replaced
                         }
                     }
                 },
@@ -2704,7 +2706,7 @@ namespace TailwindMerge
                                     "col-resize", "row-resize", "n-resize", "e-resize", "s-resize",
                                     "w-resize", "ne-resize", "nw-resize", "se-resize", "sw-resize",
                                     "ew-resize", "ns-resize", "nesw-resize", "nwse-resize", "zoom-in",
-                                    "zoom-out", "isArbitraryValue"
+                                    "zoom-out", isArbitraryValue
                                 }
                             }
                         }
@@ -2716,7 +2718,7 @@ namespace TailwindMerge
                     {
                         new Dictionary<string, List<object>>
                         {
-                            { "caret", new List<object> { "colors" } } // Assuming "colors" is a method or variable to be replaced
+                            { "caret", new List<object> { colors } } // Assuming colors is a method or variable to be replaced
                         }
                     }
                 },
@@ -2756,7 +2758,7 @@ namespace TailwindMerge
                     {
                         new Dictionary<string, List<object>>
                         {
-                            { "scroll-m", new List<object> { "getSpacingWithArbitrary()" } } // Use actual function call or replace with real values
+                            { "scroll-m", new List<object> { spacingWithArbitrary } } // Use actual function call or replace with real values
                         }
                     }
                 },
@@ -2768,7 +2770,7 @@ namespace TailwindMerge
                     {
                         new Dictionary<string, List<object>>
                         {
-                            { "scroll-mx", new List<object> { "getSpacingWithArbitrary()" } } // Use actual function call or replace with real values
+                            { "scroll-mx", new List<object> { spacingWithArbitrary } } // Use actual function call or replace with real values
                         }
                     }
                 },
@@ -2778,7 +2780,7 @@ namespace TailwindMerge
                     {
                         new Dictionary<string, List<object>>
                         {
-                            { "scroll-my", new List<object> { "getSpacingWithArbitrary()" } } // Use actual function call or replace with real values
+                            { "scroll-my", new List<object> { spacingWithArbitrary } } // Use actual function call or replace with real values
                         }
                     }
                 },
@@ -2788,7 +2790,7 @@ namespace TailwindMerge
                     {
                         new Dictionary<string, List<object>>
                         {
-                            { "scroll-ms", new List<object> { "getSpacingWithArbitrary()" } } // Use actual function call or replace with real values
+                            { "scroll-ms", new List<object> { spacingWithArbitrary } } // Use actual function call or replace with real values
                         }
                     }
                 },
@@ -2798,7 +2800,7 @@ namespace TailwindMerge
                     {
                         new Dictionary<string, List<object>>
                         {
-                            { "scroll-me", new List<object> { "getSpacingWithArbitrary()" } } // Use actual function call or replace with real values
+                            { "scroll-me", new List<object> { spacingWithArbitrary } } // Use actual function call or replace with real values
                         }
                     }
                 },
@@ -2808,7 +2810,7 @@ namespace TailwindMerge
                     {
                         new Dictionary<string, List<object>>
                         {
-                            { "scroll-mt", new List<object> { "getSpacingWithArbitrary()" } } // Use actual function call or replace with real values
+                            { "scroll-mt", new List<object> { spacingWithArbitrary } } // Use actual function call or replace with real values
                         }
                     }
                 },
@@ -2818,7 +2820,7 @@ namespace TailwindMerge
                     {
                         new Dictionary<string, List<object>>
                         {
-                            { "scroll-mr", new List<object> { "getSpacingWithArbitrary()" } } // Use actual function call or replace with real values
+                            { "scroll-mr", new List<object> { spacingWithArbitrary } } // Use actual function call or replace with real values
                         }
                     }
                 },
@@ -2828,7 +2830,7 @@ namespace TailwindMerge
                     {
                         new Dictionary<string, List<object>>
                         {
-                            { "scroll-mb", new List<object> { "getSpacingWithArbitrary()" } } // Use actual function call or replace with real values
+                            { "scroll-mb", new List<object> { spacingWithArbitrary } } // Use actual function call or replace with real values
                         }
                     }
                 },
@@ -2838,7 +2840,7 @@ namespace TailwindMerge
                     {
                         new Dictionary<string, List<object>>
                         {
-                            { "scroll-ml", new List<object> { "getSpacingWithArbitrary()" } } // Use actual function call or replace with real values
+                            { "scroll-ml", new List<object> { spacingWithArbitrary } } // Use actual function call or replace with real values
                         }
                     }
                 },
@@ -2848,7 +2850,7 @@ namespace TailwindMerge
                     {
                         new Dictionary<string, List<object>>
                         {
-                            { "scroll-p", new List<object> { "getSpacingWithArbitrary()" } } // Use actual function call or replace with real values
+                            { "scroll-p", new List<object> { spacingWithArbitrary } } // Use actual function call or replace with real values
                         }
                     }
                 },
@@ -2858,7 +2860,7 @@ namespace TailwindMerge
                     {
                         new Dictionary<string, List<object>>
                         {
-                            { "scroll-px", new List<object> { "getSpacingWithArbitrary()" } } // Use actual function call or replace with real values
+                            { "scroll-px", new List<object> { spacingWithArbitrary } } // Use actual function call or replace with real values
                         }
                     }
                 },
@@ -2870,7 +2872,7 @@ namespace TailwindMerge
                     {
                         new Dictionary<string, List<object>>
                         {
-                            { "scroll-py", new List<object> { "getSpacingWithArbitrary()" } } // Use actual function call or replace with real values
+                            { "scroll-py", new List<object> { spacingWithArbitrary } } // Use actual function call or replace with real values
                         }
                     }
                 },
@@ -2880,7 +2882,7 @@ namespace TailwindMerge
                     {
                         new Dictionary<string, List<object>>
                         {
-                            { "scroll-ps", new List<object> { "getSpacingWithArbitrary()" } } // Use actual function call or replace with real values
+                            { "scroll-ps", new List<object> { spacingWithArbitrary } } // Use actual function call or replace with real values
                         }
                     }
                 },
@@ -2890,7 +2892,7 @@ namespace TailwindMerge
                     {
                         new Dictionary<string, List<object>>
                         {
-                            { "scroll-pe", new List<object> { "getSpacingWithArbitrary()" } } // Use actual function call or replace with real values
+                            { "scroll-pe", new List<object> { spacingWithArbitrary } } // Use actual function call or replace with real values
                         }
                     }
                 },
@@ -2900,7 +2902,7 @@ namespace TailwindMerge
                     {
                         new Dictionary<string, List<object>>
                         {
-                            { "scroll-pt", new List<object> { "getSpacingWithArbitrary()" } } // Use actual function call or replace with real values
+                            { "scroll-pt", new List<object> { spacingWithArbitrary } } // Use actual function call or replace with real values
                         }
                     }
                 },
@@ -2910,7 +2912,7 @@ namespace TailwindMerge
                     {
                         new Dictionary<string, List<object>>
                         {
-                            { "scroll-pr", new List<object> { "getSpacingWithArbitrary()" } } // Use actual function call or replace with real values
+                            { "scroll-pr", new List<object> { spacingWithArbitrary } } // Use actual function call or replace with real values
                         }
                     }
                 },
@@ -2920,7 +2922,7 @@ namespace TailwindMerge
                     {
                         new Dictionary<string, List<object>>
                         {
-                            { "scroll-pb", new List<object> { "getSpacingWithArbitrary()" } } // Use actual function call or replace with real values
+                            { "scroll-pb", new List<object> { spacingWithArbitrary } } // Use actual function call or replace with real values
                         }
                     }
                 },
@@ -2930,7 +2932,7 @@ namespace TailwindMerge
                     {
                         new Dictionary<string, List<object>>
                         {
-                            { "scroll-pl", new List<object> { "getSpacingWithArbitrary()" } } // Use actual function call or replace with real values
+                            { "scroll-pl", new List<object> { spacingWithArbitrary } } // Use actual function call or replace with real values
                         }
                     }
                 },
@@ -3026,7 +3028,7 @@ namespace TailwindMerge
                     {
                         new Dictionary<string, List<object>>
                         {
-                            { "will-change", new List<object> { "auto", "scroll", "contents", "transform", "isArbitraryValue" } } // Use actual variables or methods
+                            { "will-change", new List<object> { "auto", "scroll", "contents", "transform", isArbitraryValue } } // Use actual variables or methods
                         }
                     }
                 },
@@ -3036,7 +3038,7 @@ namespace TailwindMerge
                     {
                         new Dictionary<string, List<object>>
                         {
-                            { "fill", new List<object> { "colors", "none" } } // Assuming "colors" is a method or variable to be replaced
+                            { "fill", new List<object> { colors, "none" } } // Assuming colors is a method or variable to be replaced
                         }
                     }
                 },
@@ -3046,7 +3048,7 @@ namespace TailwindMerge
                     {
                         new Dictionary<string, List<object>>
                         {
-                            { "stroke", new List<object> { "isLength", "isArbitraryLength", "isArbitraryNumber" } } // Use actual variables or methods
+                            { "stroke", new List<object> { isLength, isArbitraryLength, isArbitraryNumber } } // Use actual variables or methods
                         }
                     }
                 },
@@ -3056,16 +3058,14 @@ namespace TailwindMerge
                     {
                         new Dictionary<string, List<object>>
                         {
-                            { "stroke", new List<object> { "colors", "none" } } // Assuming "colors" is a method or variable to be replaced
+                            { "stroke", new List<object> { colors, "none" } } // Assuming colors is a method or variable to be replaced
                         }
                     }
                 },
-
-
-                {
-                    "sr",
-                    new List<object> { "sr-only", "not-sr-only" }
-                },
+                //{
+                //    "sr",
+                //    new List<object> { "sr-only", "not-sr-only" }
+                //},
                 {
                     "forced-color-adjust",
                     new List<object>
@@ -3076,17 +3076,6 @@ namespace TailwindMerge
                         }
                     }
                 }
-
-
-
-
-
-
-
-
-
-
-
             };
 
             var defaultConflictingClassGroups = new Dictionary<string, List<string>>
@@ -3166,8 +3155,8 @@ namespace TailwindMerge
             {
                 { "font-size", new List<string> { "leading" } },
             };
-            
-            
+
+
             return new TailwindMergeConfig(
                 cacheSize: 500, // Default cache size
                 separator: ":", // Default separator
