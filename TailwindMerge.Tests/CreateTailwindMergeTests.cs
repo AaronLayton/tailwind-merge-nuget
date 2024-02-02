@@ -6,6 +6,14 @@ namespace TailwindMerge.Tests;
 
 public class CreateTailwindMergeTests
 {
+    private readonly TailwindMerge _TW;
+
+    public CreateTailwindMergeTests()
+    {
+        _TW = new TailwindMerge();
+    }
+
+
     [Fact]
     public void CreateTailwindMergeWorksWithSingleConfigFunction()
     {

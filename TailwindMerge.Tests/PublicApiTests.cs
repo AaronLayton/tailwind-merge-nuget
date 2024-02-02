@@ -7,6 +7,13 @@ namespace TailwindMerge.Tests;
 
 public class PublicApiTests
 {
+    private readonly TailwindMerge _TW;
+
+    public PublicApiTests()
+    {
+        _TW = new TailwindMerge();
+    }
+
     [Fact]
     public void HasCorrectExportTypes()
     {
@@ -53,24 +60,24 @@ public class PublicApiTests
     [Fact]
     public void TwMergeHasCorrectInputsAndOutputs()
     {
-        Assert.IsType<string>(TW.Merge(""));
-        Assert.IsType<string>(TW.Merge("hello world"));
-        Assert.IsType<string>(TW.Merge("-:-:-:::---h-"));
-        Assert.IsType<string>(TW.Merge("hello world", "-:-:-:::---h-"));
-        Assert.IsType<string>(TW.Merge("hello world", "-:-:-:::---h-", "", "something"));
-        //Assert.IsType<string>(TW.Merge("hello world", null));
-        //Assert.IsType<string>(TW.Merge("hello world", null, null));
-        //Assert.IsType<string>(TW.Merge("hello world", null, null, false));
-        //Assert.IsType<string>(TW.Merge("hello world", new[] { null }, new[] { null, false }));
-        //Assert.IsType<string>(TW.Merge("hello world", new[] { null }, new[] { null, new object[] { false, "some-class" }, new object[] { } }));
+        Assert.IsType<string>(_TW.Merge(""));
+        Assert.IsType<string>(_TW.Merge("hello world"));
+        Assert.IsType<string>(_TW.Merge("-:-:-:::---h-"));
+        Assert.IsType<string>(_TW.Merge("hello world", "-:-:-:::---h-"));
+        Assert.IsType<string>(_TW.Merge("hello world", "-:-:-:::---h-", "", "something"));
+        //Assert.IsType<string>(_TW.Merge("hello world", null));
+        //Assert.IsType<string>(_TW.Merge("hello world", null, null));
+        //Assert.IsType<string>(_TW.Merge("hello world", null, null, false));
+        //Assert.IsType<string>(_TW.Merge("hello world", new[] { null }, new[] { null, false }));
+        //Assert.IsType<string>(_TW.Merge("hello world", new[] { null }, new[] { null, new object[] { false, "some-class" }, new object[] { } }));
 
         //Delegate noRun = () =>
         //{
-        //    // Assert.Throws<Exception>(() => TW.Merge(123));
-        //    // Assert.Throws<Exception>(() => TW.Merge(true));
-        //    // Assert.Throws<Exception>(() => TW.Merge(new object()));
-        //    // Assert.Throws<Exception>(() => TW.Merge(new DateTime()));
-        //    // Assert.Throws<Exception>(() => TW.Merge(() => { }));
+        //    // Assert.Throws<Exception>(() => _TW.Merge(123));
+        //    // Assert.Throws<Exception>(() => _TW.Merge(true));
+        //    // Assert.Throws<Exception>(() => _TW.Merge(new object()));
+        //    // Assert.Throws<Exception>(() => _TW.Merge(new DateTime()));
+        //    // Assert.Throws<Exception>(() => _TW.Merge(() => { }));
         //};
     }
 

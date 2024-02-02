@@ -6,22 +6,29 @@ namespace TailwindMerge.Tests;
 
 public class ModifiersTests
 {
+    private readonly TailwindMerge _TW;
+
+    public ModifiersTests()
+    {
+        _TW = new TailwindMerge();
+    }
+
     [Fact]
     public void ConflictsAcrossPrefixModifiers()
     {
-        Assert.Equal("hover:inline", TW.Merge("hover:block hover:inline"));
-        Assert.Equal("hover:block hover:focus:inline", TW.Merge("hover:block hover:focus:inline"));
-        Assert.Equal("hover:block focus:hover:inline", TW.Merge("hover:block hover:focus:inline focus:hover:inline"));
-        Assert.Equal("focus-within:block", TW.Merge("focus-within:inline focus-within:block"));
+        Assert.Equal("hover:inline", _TW.Merge("hover:block hover:inline"));
+        Assert.Equal("hover:block hover:focus:inline", _TW.Merge("hover:block hover:focus:inline"));
+        Assert.Equal("hover:block focus:hover:inline", _TW.Merge("hover:block hover:focus:inline focus:hover:inline"));
+        Assert.Equal("focus-within:block", _TW.Merge("focus-within:inline focus-within:block"));
     }
 
     [Fact]
     public void ConflictsAcrossPostfixModifiers()
     {
-        Assert.Equal("text-lg/8", TW.Merge("text-lg/7 text-lg/8"));
-        Assert.Equal("text-lg/none leading-9", TW.Merge("text-lg/none leading-9"));
-        Assert.Equal("text-lg/none", TW.Merge("leading-9 text-lg/none"));
-        Assert.Equal("w-1/2", TW.Merge("w-full w-1/2"));
+        Assert.Equal("text-lg/8", _TW.Merge("text-lg/7 text-lg/8"));
+        Assert.Equal("text-lg/none leading-9", _TW.Merge("text-lg/none leading-9"));
+        Assert.Equal("text-lg/none", _TW.Merge("leading-9 text-lg/none"));
+        Assert.Equal("w-1/2", _TW.Merge("w-full w-1/2"));
 
         //var customTwMerge = CreateTailwindMerge(() => new
         //{
