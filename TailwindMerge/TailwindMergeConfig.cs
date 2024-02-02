@@ -261,10 +261,10 @@ namespace TailwindMerge
                         }
                     }
                 },
-                //{
-                //    "container",
-                //    new List<object> { "container" }
-                //},
+                {
+                    "container",
+                    new List<object> { "container" }
+                },
                 {
                     "columns",
                     new List<object>
@@ -440,10 +440,10 @@ namespace TailwindMerge
                         }
                     }
                 },
-                //{
-                //    "position",
-                //    new List<object> { "static", "fixed", "absolute", "relative", "sticky" }
-                //},
+                {
+                    "position",
+                    new List<object> { "static", "fixed", "absolute", "relative", "sticky" }
+                },
 
                 {
                     "inset",
@@ -451,9 +451,7 @@ namespace TailwindMerge
                     {
                         new Dictionary<string, List<object>>
                         {
-                            {
-                              "inset", new List<object> { inset }
-                            } // Assuming inset is a variable or method to be replaced
+                            { "inset", new List<object> { inset } } // Adjust with actual method or values
                         }
                     }
                 },
@@ -537,10 +535,10 @@ namespace TailwindMerge
                         }
                     }
                 },
-                //{
-                //    "visibility",
-                //    new List<object> { "visible", "invisible", "collapse" }
-                //},
+                {
+                    "visibility",
+                    new List<object> { "visible", "invisible", "collapse" }
+                },
                 {
                     "z",
                     new List<object>
@@ -1074,10 +1072,10 @@ namespace TailwindMerge
                         }
                     }
                 },
-                //{
-                //    "space-y-reverse",
-                //    new List<object> { "space-y-reverse" }
-                //},
+                {
+                    "space-y-reverse",
+                    new List<object> { "space-y-reverse" }
+                },
                 {
                     "w",
                     new List<object>
@@ -1211,14 +1209,14 @@ namespace TailwindMerge
                         }
                     }
                 },
-                //{
-                //    "font-smoothing",
-                //    new List<object> { "antialiased", "subpixel-antialiased" }
-                //},
-                //{
-                //    "font-style",
-                //    new List<object> { "italic", "not-italic" }
-                //},
+                {
+                    "font-smoothing",
+                    new List<object> { "antialiased", "subpixel-antialiased" }
+                },
+                {
+                    "font-style",
+                    new List<object> { "italic", "not-italic" }
+                },
                 {
                     "font-weight",
                     new List<object>
@@ -1244,32 +1242,32 @@ namespace TailwindMerge
                         }
                     }
                 },
-                //{
-                //    "fvn-normal",
-                //    new List<object> { "normal-nums" }
-                //},
-                //{
-                //    "fvn-ordinal",
-                //    new List<object> { "ordinal" }
-                //},
+                {
+                    "fvn-normal",
+                    new List<object> { "normal-nums" }
+                },
+                {
+                    "fvn-ordinal",
+                    new List<object> { "ordinal" }
+                },
 
 
-                //{
-                //    "fvn-slashed-zero",
-                //    new List<object> { "slashed-zero" }
-                //},
-                //{
-                //    "fvn-figure",
-                //    new List<object> { "lining-nums", "oldstyle-nums" }
-                //},
-                //{
-                //    "fvn-spacing",
-                //    new List<object> { "proportional-nums", "tabular-nums" }
-                //},
-                //{
-                //    "fvn-fraction",
-                //    new List<object> { "diagonal-fractions", "stacked-fractions" }
-                //},
+                {
+                    "fvn-slashed-zero",
+                    new List<object> { "slashed-zero" }
+                },
+                {
+                    "fvn-figure",
+                    new List<object> { "lining-nums", "oldstyle-nums" }
+                },
+                {
+                    "fvn-spacing",
+                    new List<object> { "proportional-nums", "tabular-nums" }
+                },
+                {
+                    "fvn-fraction",
+                    new List<object> { "diagonal-fractions", "stacked-fractions" }
+                },
                 {
                     "tracking",
                     new List<object>
@@ -1443,14 +1441,14 @@ namespace TailwindMerge
                 },
 
 
-                //{
-                //    "text-transform",
-                //    new List<object> { "uppercase", "lowercase", "capitalize", "normal-case" }
-                //},
-                //{
-                //    "text-overflow",
-                //    new List<object> { "truncate", "text-ellipsis", "text-clip" }
-                //},
+                {
+                    "text-transform",
+                    new List<object> { "uppercase", "lowercase", "capitalize", "normal-case" }
+                },
+                {
+                    "text-overflow",
+                    new List<object> { "truncate", "text-ellipsis", "text-clip" }
+                },
                 {
                     "text-wrap",
                     new List<object>
@@ -3062,10 +3060,10 @@ namespace TailwindMerge
                         }
                     }
                 },
-                //{
-                //    "sr",
-                //    new List<object> { "sr-only", "not-sr-only" }
-                //},
+                {
+                    "sr",
+                    new List<object> { "sr-only", "not-sr-only" }
+                },
                 {
                     "forced-color-adjust",
                     new List<object>

@@ -56,9 +56,8 @@ namespace TailwindMerge
 
                 if (classDefinition is ThemeGetter themeGetter)
                 {
-                    Dictionary<string, dynamic> themeResult = themeGetter.Execute(theme);
-                    List<object> themeList = themeResult.Select(kvp => (object)new Dictionary<string, dynamic> { { kvp.Key, kvp.Value } }).ToList();
-                    ProcessClassesRecursively(themeList, classPart, classGroupId, theme);
+                    List<object> themeResult = themeGetter.Execute(theme);
+                    ProcessClassesRecursively(themeResult, classPart, classGroupId, theme);
                     continue;
                 }
 

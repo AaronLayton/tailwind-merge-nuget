@@ -9,9 +9,9 @@ namespace TailwindMerge.Utilities
             Key = key;
         }
 
-        public Dictionary<string, dynamic> Execute(Dictionary<string, dynamic> theme)
+        public List<object> Execute(Dictionary<string, dynamic> theme)
         {
-            return theme.TryGetValue(Key, out var value) ? value : new Dictionary<string, dynamic>();
+            return theme.TryGetValue(Key, out var value) ? value : new List<object>();
         }
     }
 }
